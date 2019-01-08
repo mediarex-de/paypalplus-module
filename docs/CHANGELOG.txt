@@ -1,6 +1,10 @@
 PayPal Plus changelog
 =====================
 
+unreleased
+------
+- removed vendor dir
+
 v3.0.3
 ------
 - Integrated the BN Code Oxid_Cart_6Cart_Plus (PayPal-Partner-Attribution-Id)

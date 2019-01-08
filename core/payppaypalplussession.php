@@ -19,8 +19,7 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-// Load SDK
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
+
 
 
 /**
