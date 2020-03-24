@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\DataAccess.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\DataAccess.
  * Array and object data access utils.
  */
-class DataAccess extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class DataAccess extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * @var PayPal\Core\PayPalLoggingManager|null
@@ -90,12 +90,12 @@ class DataAccess extends \OxidEsales\PayPalPlus\Core\SuperCfg
      * set to a target object (SDK API model or OXID eShop model).
      * Sets only non-empty value.
      *
-     * @param \OxidEsales\PayPalPlus\Model\DataProvider                             $oSource
+     * @param \OxidProfessionalServices\PayPalPlus\Model\DataProvider                             $oSource
      * @param PayPal\Common\PayPalModel|\OxidEsales\Eshop\Core\Model\BaseModel      $oTarget
      * @param array                                                                 $aFields
      * @param string                                                                $sGetterPrefix
      */
-    public function transfuse(\OxidEsales\PayPalPlus\Model\DataProvider $oSource, $oTarget, array $aFields, $sGetterPrefix = '')
+    public function transfuse(\OxidProfessionalServices\PayPalPlus\Model\DataProvider $oSource, $oTarget, array $aFields, $sGetterPrefix = '')
     {
         if (($oTarget instanceof PayPal\Common\PayPalModel) or ($oTarget instanceof \OxidEsales\Eshop\Core\Model\BaseModel)) {
             foreach ($aFields as $sField) {
@@ -267,10 +267,10 @@ class DataAccess extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param string                                                                $sField
      * @param string                                                                $sGetterPrefix
-     * @param \OxidEsales\PayPalPlus\Model\DataProvider                             $oSource
+     * @param \OxidProfessionalServices\PayPalPlus\Model\DataProvider                             $oSource
      * @param PayPal\Common\PayPalModel|\OxidEsales\Eshop\Core\Model\BaseModel      $oTarget
      */
-    protected function _assignFieldCrossObjects($sField, $sGetterPrefix, \OxidEsales\PayPalPlus\Model\DataProvider $oSource, $oTarget)
+    protected function _assignFieldCrossObjects($sField, $sGetterPrefix, \OxidProfessionalServices\PayPalPlus\Model\DataProvider $oSource, $oTarget)
     {
         $sGetterName = 'get' . $sGetterPrefix . $sField;
         $sSetterName = 'set' . $sField;

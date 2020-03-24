@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\PaypalPlusEvents.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents.
  * Module activation/deactivation event actions handler.
  */
-class PaypalPlusEvents extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class PaypalPlusEvents extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * A primary key value of PayPal Plus payment method in eShop database.
@@ -470,7 +470,7 @@ class PaypalPlusEvents extends \OxidEsales\PayPalPlus\Core\SuperCfg
      */
     protected function _getWebHookList()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\Sdk $oSdk */
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\Sdk $oSdk */
         $oSdk = $this->getSdk();
 
         $oApiContext = $this->_getPayPalApiContext();
@@ -503,7 +503,7 @@ class PaypalPlusEvents extends \OxidEsales\PayPalPlus\Core\SuperCfg
      */
     protected function _createPaypalWebhook()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\Sdk $oSdk */
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\Sdk $oSdk */
         $oSdk = $this->getSdk();
         $oApiContext = $this->_getPayPalApiContext();
 
@@ -566,13 +566,13 @@ class PaypalPlusEvents extends \OxidEsales\PayPalPlus\Core\SuperCfg
     }
 
     /**
-     * @return object|\OxidEsales\PayPalPlus\Core\Sdk
+     * @return object|\OxidProfessionalServices\PayPalPlus\Core\Sdk
      */
     protected function _getPayPalPlusSuperCfg()
     {
         if (is_null($this->_oPayPalPlusSuperCfg)) {
-            /** @var \OxidEsales\PayPalPlus\Core\SuperCfg $oPayPalPlusSuperCfg */
-            $this->_oPayPalPlusSuperCfg = oxNew(\OxidEsales\PayPalPlus\Core\SuperCfg::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\SuperCfg $oPayPalPlusSuperCfg */
+            $this->_oPayPalPlusSuperCfg = oxNew(\OxidProfessionalServices\PayPalPlus\Core\SuperCfg::class);
         }
 
         return $this->_oPayPalPlusSuperCfg;

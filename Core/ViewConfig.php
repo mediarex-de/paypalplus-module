@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\ViewConfig.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\ViewConfig.
  * Overloads ViewConfig class.
  *
  * @see \OxidEsales\Eshop\Core\ViewConfig
@@ -32,7 +32,7 @@ class ViewConfig extends ViewConfig_parent
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oPayPalPlusShop = null;
 
@@ -40,12 +40,12 @@ class ViewConfig extends ViewConfig_parent
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getPayPalPlusShop()
     {
         if (is_null($this->_oPayPalPlusShop)) {
-            $this->_oPayPalPlusShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oPayPalPlusShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oPayPalPlusShop;

@@ -19,15 +19,15 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\PaymentDataProvider.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider.
  * A data provider for PlusPaymentData model.
  *
  * @see \OxidEsales\PaypalPlus\Model\PlusDataProvider
  */
-class PaymentDataProvider extends \OxidEsales\PayPalPlus\Model\PlusDataProvider
+class PaymentDataProvider extends \OxidProfessionalServices\PayPalPlus\Model\PlusDataProvider
 {
     /**
      * Fields names for paypPayPalPlusPaymentData model.
@@ -65,7 +65,7 @@ class PaymentDataProvider extends \OxidEsales\PayPalPlus\Model\PlusDataProvider
     }
 
     /**
-     * Get all field values for \OxidEsales\PayPalPlus\Model\PaymentData model.
+     * Get all field values for \OxidProfessionalServices\PayPalPlus\Model\PaymentData model.
      *
      * @return array
      */

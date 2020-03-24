@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\Basket.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\Basket.
  * Overloads Basket model.
  *
  * @see \OxidEsales\Eshop\Application\Model\Basket
@@ -32,19 +32,19 @@ class Basket extends Basket_parent
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -69,7 +69,7 @@ class Basket extends Basket_parent
      */
     public function getBasketHash()
     {
-        /** @var \OxidEsales\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket $this */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket $this */
 
         $oDataAccess = $this->getShop()->getDataAccess();
         $sBasketItemsIdentifier = '';
@@ -96,7 +96,7 @@ class Basket extends Basket_parent
      */
     public function afterUpdate()
     {
-        /** @var \OxidEsales\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket $this */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket $this */
 
         $this->_paypPayPalPlusOxBasket_afterUpdate_parent();
 

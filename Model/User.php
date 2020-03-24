@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\User.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\User.
  * Overloads User model.
  *
  * @see \OxidEsales\Eshop\Application\Model\User
@@ -41,8 +41,8 @@ class User extends User_parent
 
         if (!empty($blReturn)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\Profile $oProfile */
-            $oProfile = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getNew(\OxidEsales\PayPalPlus\Model\Profile::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\Profile $oProfile */
+            $oProfile = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\Profile::class);
             $oProfile->postSave($this);
         }
 
@@ -57,7 +57,7 @@ class User extends User_parent
     public function getUserCountryCode()
     {
         if ($this->oxuser__oxcountryid->value) {
-            $oDb = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getDb();
+            $oDb = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getDb();
             $sViewName = getViewName('oxcountry');
             $sQ = "select oxisoalpha2 from {$sViewName} where oxid = " . $oDb->quote($this->oxuser__oxcountryid->value);
 

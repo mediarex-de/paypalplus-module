@@ -217,7 +217,7 @@ class paypPayPalPlusShopTest extends OxidTestCase
     {
         $oSession = $this->getMock('paypPayPalPlusSession', array('__call', 'init'));
         $oSession->expects($this->once())->method('init');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertSame($oSession, $this->SUT->getPayPalPlusSession());
     }

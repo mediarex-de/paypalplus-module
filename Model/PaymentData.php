@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\PaymentData.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\PaymentData.
  * PayPal Plus payment data model.
  */
 class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
@@ -37,14 +37,14 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     /**
      * List of refunds associated with the payment.
      *
-     * @var null|\OxidEsales\PayPalPlus\Model\RefundDataList
+     * @var null|\OxidProfessionalServices\PayPalPlus\Model\RefundDataList
      */
     protected $_oRefundList = null;
 
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
@@ -257,7 +257,7 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
 
         if ($this->payppaypalpluspayment__oxpaymentobject instanceof \OxidEsales\Eshop\Core\Field) {
             try {
-                $oSdk = $this->getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\Sdk::class);
+                $oSdk = $this->getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Sdk::class);
                 $oPayment = $oSdk->newPayment();
                 $oPayment->fromJson($this->payppaypalpluspayment__oxpaymentobject->getRawValue());
             } catch (Exception $e) {
@@ -280,12 +280,12 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -332,14 +332,14 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
      * Get OXID eShop order associated with the PayPal Plus Payment.
      * Throw an exception if the order is not loaded (each payment must be based on an order).
      *
-     * @return null|\OxidEsales\PayPalPlus\Core\Shop
+     * @return null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      * @throws \OxidEsales\Eshop\Core\Exception\StandardException
      */
     public function getOrder()
     {
         if (is_null($this->_oOrder)) {
 
-            /** @var \OxidEsales\PayPalPlus\Core\Shop $oOrder */
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\Shop $oOrder */
             $oOrder = $this->getShop()->getNew('oxOrder');
 
             if ($oOrder->load($this->getOrderId())) {
@@ -355,14 +355,14 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     /**
      * Get a list of related refunds by sale ID.
      *
-     * @return null|\OxidEsales\PayPalPlus\Model\RefundDataList
+     * @return null|\OxidProfessionalServices\PayPalPlus\Model\RefundDataList
      */
     public function getRefundsList()
     {
         if (is_null($this->_oRefundList)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\RefundDataList $oRefundList */
-            $oRefundList = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Model\RefundDataList::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\RefundDataList $oRefundList */
+            $oRefundList = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundDataList::class);
             $oRefundList->loadRefundsBySaleId($this->getSaleId());
 
             if ($oRefundList->count() > 0) {
@@ -382,8 +382,8 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     {
         if (is_null($this->_dTotalAmountRefunded)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\RefundDataList $oRefundList */
-            $oRefundList = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Model\RefundDataList::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\RefundDataList $oRefundList */
+            $oRefundList = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundDataList::class);
             $this->_dTotalAmountRefunded = (double) $oRefundList->getRefundedSumBySaleId($this->getSaleId());
         }
 
@@ -402,8 +402,8 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     {
         if ($this->_paypPayPalPlusPaymentData_delete_parent($sOxId)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\RefundData $oRefundData */
-            $oRefundData = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Model\RefundData::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\RefundData $oRefundData */
+            $oRefundData = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundData::class);
 
             return (bool) $oRefundData->deleteBySaleId($this->getSaleId());
         }
@@ -448,7 +448,7 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     public function setOrderPaid($sDatetime)
     {
         $oShop = $this->getShop();
-        /** @var \OxidEsales\PayPalPlus\Model\Order $oOrder */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Order $oOrder */
         $oOrder = $this->getOrder();
         $oOrder->setPaymentDateAndTime(
             $oShop->getConverter()->date($sDatetime)
@@ -460,7 +460,7 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
     public function getPaymentInstructions()
     {
         $oPaymentInstructions = null;
-        $oPayPalPlusPuiData = oxNew(\OxidEsales\PayPalPlus\Model\PuiData::class);
+        $oPayPalPlusPuiData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\PuiData::class);
         if ($oPayPalPlusPuiData->loadByPaymentId($this->getPaymentId())) {
             $oPaymentInstructions = $oPayPalPlusPuiData;
         }
@@ -501,8 +501,8 @@ class PaymentData extends \OxidEsales\Eshop\Core\Model\BaseModel
      */
     protected function _throwCouldNotLoadOrderError()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\Exception\NoOrderException $oEx */
-        $oEx = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Core\Exception\NoOrderException::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\Exception\NoOrderException $oEx */
+        $oEx = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Core\Exception\NoOrderException::class);
         $oEx->setMessage($this->getShop()->translate('PAYP_PAYPALPLUS_ERROR_NO_ORDER'));
 
         throw $oEx;

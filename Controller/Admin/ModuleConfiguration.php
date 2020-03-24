@@ -20,7 +20,7 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2016
  */
 
-namespace OxidEsales\PayPalPlus\Controller\Admin;
+namespace OxidProfessionalServices\PayPalPlus\Controller\Admin;
 
 class ModuleConfiguration extends ModuleConfiguration_parent
 {
@@ -228,7 +228,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
     protected function _getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -261,8 +261,8 @@ class ModuleConfiguration extends ModuleConfiguration_parent
      */
     protected function _doRequest($method, $params)
     {
-        /** @var \OxidEsales\PayPalPlus\Core\WebProfileHandler $oWebProfileHandler */
-        $oWebProfileHandler = $this->_getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\WebProfileHandler::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\WebProfileHandler $oWebProfileHandler */
+        $oWebProfileHandler = $this->_getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\WebProfileHandler::class);
 
         try {
             return $oWebProfileHandler->{$method}($this->_getShop()->getPayPalPlusSession()->getApiContext(), $params);

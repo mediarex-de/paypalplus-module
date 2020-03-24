@@ -314,7 +314,7 @@ class Admin_paypPayPalPlusOrderTabTest extends OxidTestCase
                 $this->returnValue($oApiContext)
             );
 
-            \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oPayPalPlusSession);
+            \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oPayPalPlusSession);
 
             $oRefundHandler->expects($this->once())->method('init')->with($sAmountSet, $sCurrencySet, $sSaleId);
             $oRefundHandler->expects($this->once())->method('refund')->with($oApiContext)->will(
@@ -322,7 +322,7 @@ class Admin_paypPayPalPlusOrderTabTest extends OxidTestCase
             );
         }
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\RefundHandler::class, $oRefundHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\RefundHandler::class, $oRefundHandler);
 
         $this->SUT->actionRefund();
 

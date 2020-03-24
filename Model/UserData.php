@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\UserData.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\UserData.
  * User account and addresses data provider for SDK Address.
  */
-class UserData extends \OxidEsales\PayPalPlus\Model\DataProvider
+class UserData extends \OxidProfessionalServices\PayPalPlus\Model\DataProvider
 {
     /**
      * User profile and address fields names for SDK object Address.

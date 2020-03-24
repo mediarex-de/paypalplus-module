@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class OxidEsales\PayPalPlus\Model\BasketData.
+ * Class OxidProfessionalServices\PayPalPlus\Model\BasketData.
  * Basket data provider for SDK models: ItemList, Details and Amount.
  */
-class BasketData extends \OxidEsales\PayPalPlus\Model\PuiDataProvider
+class BasketData extends \OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider
 {
     /**
      * Fields names to use for SDK objects Amount and Details.
@@ -117,8 +117,8 @@ class BasketData extends \OxidEsales\PayPalPlus\Model\PuiDataProvider
         foreach ($oBasketItems as $oBasketItem) {
             /** @var \OxidEsales\Eshop\Application\Model\BasketItem $oBasketItem */
 
-            /** @var \OxidEsales\PayPalPlus\Model\BasketItemData $oBasketItemData */
-            $oBasketItemData = $this->getNew(\OxidEsales\PayPalPlus\Model\BasketItemData::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\BasketItemData $oBasketItemData */
+            $oBasketItemData = $this->getNew(\OxidProfessionalServices\PayPalPlus\Model\BasketItemData::class);
             $oBasketItemData->setBasketItem($oBasketItem);
             $iItemsQuantity = (int) $oBasketItemData->getQuantity();
 

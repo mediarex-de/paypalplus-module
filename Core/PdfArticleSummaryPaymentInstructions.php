@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\PdfArticleSummaryPaymentInstructions
+ * Class \OxidProfessionalServices\PayPalPlus\Core\PdfArticleSummaryPaymentInstructions
  *
  * Handle the data retrieval and formatting of the payment instructions of an order.
  * Set the instance of the PdfArticleSummary in order to add the text lines there.
@@ -40,7 +40,7 @@ class PdfArticleSummaryPaymentInstructions
     /**
      * An instance of paypPayPalPlusPuiData.
      *
-     * @var \OxidEsales\PayPalPlus\Model\PuiData
+     * @var \OxidProfessionalServices\PayPalPlus\Model\PuiData
      */
     protected $_oPaymentInstructions;
 
@@ -125,9 +125,9 @@ class PdfArticleSummaryPaymentInstructions
      *
      * @codeCoverageIgnore
      *
-     * @param \OxidEsales\PayPalPlus\Model\PuiData $oPaymentInstructions
+     * @param \OxidProfessionalServices\PayPalPlus\Model\PuiData $oPaymentInstructions
      */
-    public function setPaymentInstructions(\OxidEsales\PayPalPlus\Model\PuiData $oPaymentInstructions)
+    public function setPaymentInstructions(\OxidProfessionalServices\PayPalPlus\Model\PuiData $oPaymentInstructions)
     {
         $this->_oPaymentInstructions = $oPaymentInstructions;
     }

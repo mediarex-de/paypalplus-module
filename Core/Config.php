@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\Config
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Config
  * Module configuration helper.
  */
-class Config extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class Config extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * PayPal Plus payment method ID in OXID eShop database.

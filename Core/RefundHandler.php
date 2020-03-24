@@ -14,13 +14,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\RefundHandler.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\RefundHandler.
  * PayPal Plus Refund instance handler: creates refund object, fills it with data, executes refund requests, etc.
  */
-class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class RefundHandler extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * PayPal Refund instance.
@@ -190,12 +190,12 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
     {
         $oShop = $this->getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Model\RefundDataProvider $oRefundDataProvider */
-        $oRefundDataProvider = $oShop->getNew(\OxidEsales\PayPalPlus\Model\RefundDataProvider::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\RefundDataProvider $oRefundDataProvider */
+        $oRefundDataProvider = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundDataProvider::class);
         $oRefundDataProvider->init($oRefund);
 
-        /** @var \OxidEsales\PayPalPlus\Model\RefundData $oRefundData */
-        $oRefundData = $oShop->getNew(\OxidEsales\PayPalPlus\Model\RefundData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\RefundData $oRefundData */
+        $oRefundData = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundData::class);
         $oShop->getDataAccess()->transfuse($oRefundDataProvider, $oRefundData, $oRefundDataProvider->getFields());
 
         return $oRefundData->save();
@@ -206,11 +206,11 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param $sMessage
      *
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _throwRefundException($sMessage)
     {
-        $oEx = oxNew(\OxidEsales\PayPalPlus\Core\Exception\RefundException::class);
+        $oEx = oxNew(\OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException::class);
         $oEx->setMessage($sMessage);
 
         throw $oEx;
@@ -221,7 +221,7 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param string $sOxid OXID of the refundData
      *
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _discountRefund($sOxid)
     {
@@ -258,8 +258,8 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param $sSaleId
      *
-     * @return \OxidEsales\PayPalPlus\Model\Order
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @return \OxidProfessionalServices\PayPalPlus\Model\Order
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _getOrderBySaleId($sSaleId)
     {
@@ -267,7 +267,7 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
 
         $sOrderId = $oPayPalPlusPaymentData->getOrderId();
 
-        /** @var \OxidEsales\PayPalPlus\Model\Order $oOrder */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Order $oOrder */
         $oOrder = oxNew(\OxidEsales\Eshop\Application\Model\Order::class);
         if (!$oOrder->load($sOrderId)) {
             $sMessage = 'PAYP_PAYPALPLUS_ERROR_ORDER_COULD_NOT_BE_LOADED_FROM_DATABASE';
@@ -282,13 +282,13 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param $sOxid
      *
-     * @return \OxidEsales\PayPalPlus\Model\RefundData
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @return \OxidProfessionalServices\PayPalPlus\Model\RefundData
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _getRefundDataById($sOxid)
     {
         $oShop = $this->getShop();
-        $oRefundData = $oShop->getNew(\OxidEsales\PayPalPlus\Model\RefundData::class);
+        $oRefundData = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\RefundData::class);
         if (!$oRefundData->load($sOxid)) {
             $sMessage = 'PAYP_PAYPALPLUS_ERROR_REFUND_DATA_COULD_NOT_BE_LOADED_FROM_DATABASE';
             $this->_throwRefundException($sMessage);
@@ -302,12 +302,12 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
      *
      * @param $sSaleId
      *
-     * @return \OxidEsales\PayPalPlus\Model\PaymentData
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PaymentData
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _getPaymentDataBySaleId($sSaleId)
     {
-        $oPayPalPlusPaymentData = oxNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+        $oPayPalPlusPaymentData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
         $oPayPalPlusPaymentData->loadBySaleId($sSaleId);
         if (!$oPayPalPlusPaymentData->isLoaded()) {
             $sMessage = 'PAYP_PAYPALPLUS_ERROR_PAYMENT_DATA_COULD_NOT_BE_LOADED_FROM_DATABASE';
@@ -320,12 +320,12 @@ class RefundHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
     /**
      * Restore the PayPal API Refund Object as stored in the database.
      *
-     * @param \OxidEsales\PayPalPlus\Model\RefundData $oRefundData
+     * @param \OxidProfessionalServices\PayPalPlus\Model\RefundData $oRefundData
      *
      * @return bool|\PayPal\Api\Refund
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
-    protected function _getPayPalApiRefundObject(\OxidEsales\PayPalPlus\Model\RefundData $oRefundData)
+    protected function _getPayPalApiRefundObject(\OxidProfessionalServices\PayPalPlus\Model\RefundData $oRefundData)
     {
         $oPayPalRefundObject = $oRefundData->getRefundObject();
         if (!$oPayPalRefundObject instanceof \PayPal\Api\Refund) {

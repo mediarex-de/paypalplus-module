@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Component\Widget;
+namespace OxidProfessionalServices\PayPalPlus\Component\Widget;
 
 /**
- * Class \OxidEsales\PayPalPlus\Component\Widget\WallWidget.
+ * Class \OxidProfessionalServices\PayPalPlus\Component\Widget\WallWidget.
  * PayPal Plus Wall rendering widget.
  */
 class WallWidget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetController
@@ -37,7 +37,7 @@ class WallWidget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetCo
     /**
      * OXID eShop wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
@@ -64,7 +64,7 @@ class WallWidget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetCo
      */
     public function init()
     {
-        $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+        $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
 
         if ($this->getShop()->getValidator()->isPaymentCreated()) {
             $this->_oPayment = $this->getShop()->getPayPalPlusSession()->getPayment();
@@ -86,7 +86,7 @@ class WallWidget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetCo
     /**
      * Get OXID eShop wrapper instance.
      *
-     * @return null|\OxidEsales\PayPalPlus\Core\Shop
+     * @return null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
@@ -110,8 +110,8 @@ class WallWidget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetCo
      */
     public function getApprovalUrl()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-        $oPayPalPaymentHandler = $this->getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaymentHandler::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+        $oPayPalPaymentHandler = $this->getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class);
         $oPayPalPaymentHandler->setPayment($this->_oPayment);
 
         return $oPayPalPaymentHandler->getApprovalUrl();

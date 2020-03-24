@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\PlusPuiData
+ * Class \OxidProfessionalServices\PayPalPlus\Model\PlusPuiData
  *
  * Data model for Pay upon Invoice. This model reflects the payment instructions given by PayPal
  * in case "Payment upon Invoice" was chosen by the user.

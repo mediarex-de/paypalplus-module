@@ -19,15 +19,15 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\RefundDataProvider.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\RefundDataProvider.
  * A data provider for RefundData model.
  *
  * @see \OxidEsales\Eshop\Core\Model\RefundData
  */
-class RefundDataProvider extends \OxidEsales\PayPalPlus\Model\DataProvider
+class RefundDataProvider extends \OxidProfessionalServices\PayPalPlus\Model\DataProvider
 {
     /**
      * Fields names for paypPayPalPlusRefundData model.

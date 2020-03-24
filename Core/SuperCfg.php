@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\SuperCfg.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\SuperCfg.
  * A wrapper of Base for PayPal Plus module.
  * In addition to Base, it provides SDK, Config and Shop instances, aliases for new and registry objects fetching.
  */
@@ -31,14 +31,14 @@ class SuperCfg extends \OxidEsales\Eshop\Core\Base
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
     /**
      * PayPal REST API SDK driver instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Sdk
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Sdk
      */
     protected $_oSdk = null;
 
@@ -46,12 +46,12 @@ class SuperCfg extends \OxidEsales\Eshop\Core\Base
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -60,12 +60,12 @@ class SuperCfg extends \OxidEsales\Eshop\Core\Base
     /**
      * Get PayPal REST API SDK wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Sdk
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Sdk
      */
     public function getSdk()
     {
         if (is_null($this->_oSdk)) {
-            $this->_oSdk = $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\Sdk::class);
+            $this->_oSdk = $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Sdk::class);
         }
 
         return $this->_oSdk;

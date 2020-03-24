@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller\Admin;
+namespace OxidProfessionalServices\PayPalPlus\Controller\Admin;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\Admin\LanguageMain.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\Admin\LanguageMain.
  *
  * Admin Order PayPal Plus tab controller.
  *

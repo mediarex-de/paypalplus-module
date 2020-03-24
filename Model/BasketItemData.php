@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model|BasketItemData.
+ * Class \OxidProfessionalServices\PayPalPlus\Model|BasketItemData.
  * Basket item data provider for SDK model Item.
  */
-class BasketItemData extends \OxidEsales\PayPalPlus\Model\DataProvider
+class BasketItemData extends \OxidProfessionalServices\PayPalPlus\Model\DataProvider
 {
 
     /**
@@ -74,8 +74,8 @@ class BasketItemData extends \OxidEsales\PayPalPlus\Model\DataProvider
         $oUtils = $this->getDataUtils();
         $oConvert = $this->getConverter();
 
-        /** @var \OxidEsales\PayPalPlus\Model\Basket $oBasket */
-        $oBasket = $this->_getSourceObject(\OxidEsales\PayPalPlus\Model\Basket::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Basket $oBasket */
+        $oBasket = $this->_getSourceObject(\OxidProfessionalServices\PayPalPlus\Model\Basket::class);
 
         /** @var \OxidEsales\Eshop\Application\Model\BasketItem $oItem */
         $oItem = $this->_getSourceObject(\OxidEsales\Eshop\Application\Model\BasketItem::class);
@@ -98,7 +98,7 @@ class BasketItemData extends \OxidEsales\PayPalPlus\Model\DataProvider
     protected function _getSources()
     {
         return array(
-            \OxidEsales\PayPalPlus\Model\Basket::class     => $this->getShop()->getBasket(),
+            \OxidProfessionalServices\PayPalPlus\Model\Basket::class     => $this->getShop()->getBasket(),
             \OxidEsales\Eshop\Application\Model\BasketItem::class => $this->_oBasketItem,
         );
     }

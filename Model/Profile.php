@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\Profile.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\Profile.
  * User profile related objects handler.
  */
-class Profile extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class Profile extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Check if the user or address is a part of the currently logged in user profile.

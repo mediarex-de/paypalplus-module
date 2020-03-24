@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\PdfArticleSummary
+ * Class \OxidProfessionalServices\PayPalPlus\Core\PdfArticleSummary
  *
  * Extend PdfArticleSummary to be able to display additional payment instructions after the article summary.
  *
@@ -75,7 +75,7 @@ if (class_exists('PdfArticleSummary')) {
         /**
          * Get the payment instructions from the order.
          *
-         * @return null|\OxidEsales\PayPalPlus\Model\PuiData|void
+         * @return null|\OxidProfessionalServices\PayPalPlus\Model\PuiData|void
          */
         protected function _getPaymentInstructions()
         {

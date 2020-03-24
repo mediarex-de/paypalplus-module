@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\RefundData.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\RefundData.
  * PayPal Plus refund data model.
  */
 class RefundData extends \OxidEsales\Eshop\Core\Model\BaseModel
@@ -195,7 +195,7 @@ class RefundData extends \OxidEsales\Eshop\Core\Model\BaseModel
         $sSelect = sprintf(
             "SELECT * FROM `%s` WHERE `OXREFUNDID` = %s",
             $this->getCoreTableName(),
-            \OxidEsales\PayPalPlus\Core\Shop::getShop()->getDb()->quote($sRefundId)
+            \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getDb()->quote($sRefundId)
         );
 
         return $this->assignRecord($sSelect);
@@ -211,7 +211,7 @@ class RefundData extends \OxidEsales\Eshop\Core\Model\BaseModel
      */
     public function deleteBySaleId($sSaleId)
     {
-        $oDb = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getDb();
+        $oDb = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getDb();
 
         $sDeleteQuery = sprintf(
             "DELETE FROM `%s` WHERE `OXSALEID` = %s",

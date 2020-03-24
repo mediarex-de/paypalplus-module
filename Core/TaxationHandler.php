@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\TaxationHandler.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\TaxationHandler.
  * Transforms PayPal models with tax and price fields according with shop price mode.
  */
-class TaxationHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class TaxationHandler extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Is shop operating in B2C mode (price shown including tax).
@@ -37,7 +37,7 @@ class TaxationHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
     /**
      * Data converter instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\DataConverter
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     protected $_oConverter = null;
 
@@ -59,7 +59,7 @@ class TaxationHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
     /**
      * Get data converter instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataConverter
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     public function getConverter()
     {

@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller\Admin;
+namespace OxidProfessionalServices\PayPalPlus\Controller\Admin;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\Admin\OrderTab.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\Admin\OrderTab.
  *
  * Admin Order PayPal Plus tab controller.
  *
@@ -50,14 +50,14 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * Data access utils instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\DataAccess
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\DataAccess
      */
     protected $_oDataAccess = null;
 
     /**
      * Data converted utils instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\DataConverter
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     protected $_oDataConverter = null;
 
@@ -71,7 +71,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * PayPal Plus Payment model object.
      *
-     * @var null|\OxidEsales\PayPalPlus\Model\PaymentData
+     * @var null|\OxidProfessionalServices\PayPalPlus\Model\PaymentData
      */
     protected $_oOrderPayment = null;
 
@@ -105,7 +105,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -114,7 +114,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * Get data access utils instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataAccess
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataAccess
      */
     public function getDataUtils()
     {
@@ -128,7 +128,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * Get data converter utils instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataConverter
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     public function getDataConverter()
     {
@@ -162,14 +162,14 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * Get PayPal Plus payment data object related to current order.
      *
-     * @return null|\OxidEsales\PayPalPlus\Model\PaymentData
+     * @return null|\OxidProfessionalServices\PayPalPlus\Model\PaymentData
      */
     public function getOrderPayment()
     {
         if (is_null($this->_oOrderPayment)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\PaymentData $oPaymentData */
-            $oPaymentData = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\PaymentData $oPaymentData */
+            $oPaymentData = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
             $oOrder = $this->getOrder();
 
             if (($oOrder instanceof \OxidEsales\Eshop\Application\Model\Order) and $oPaymentData->loadByOrderId($oOrder->getId())) {
@@ -324,8 +324,8 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
             $oDataConverter = $this->getDataConverter();
             $oPaymentData = $this->getOrderPayment();
 
-            /** @var \OxidEsales\PayPalPlus\Core\RefundHandler $oRefundHandler */
-            $oRefundHandler = $this->getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\RefundHandler::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\RefundHandler $oRefundHandler */
+            $oRefundHandler = $this->getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\RefundHandler::class);
             $oRefundHandler->init(
                 $oDataConverter->price($sRefundAmount),
                 $oDataConverter->string($oDataAccess->invokeGet($oPaymentData, 'getCurrency'), 3),

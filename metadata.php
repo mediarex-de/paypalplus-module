@@ -42,69 +42,69 @@ $aModule = [
     'extend'      => [
 
         // Controller
-        \OxidEsales\Eshop\Application\Controller\Admin\LanguageMain::class          => \OxidEsales\PayPalPlus\Controller\Admin\LanguageMain::class,
-        \OxidEsales\Eshop\Application\Controller\Admin\OrderList::class             => \OxidEsales\PayPalPlus\Controller\Admin\OrderList::class,
-        \OxidEsales\Eshop\Application\Controller\Admin\ModuleConfiguration::class   => \OxidEsales\PayPalPlus\Controller\Admin\ModuleConfiguration::class,
-        \OxidEsales\Eshop\Application\Controller\BasketController::class            => \OxidEsales\PayPalPlus\Controller\BasketController::class,
-        \OxidEsales\Eshop\Application\Controller\OrderController::class             => \OxidEsales\PayPalPlus\Controller\OrderController::class,
-        \OxidEsales\Eshop\Application\Controller\PaymentController::class           => \OxidEsales\PayPalPlus\Controller\PaymentController::class,
-        \OxidEsales\Eshop\Application\Controller\ThankYouController::class          => \OxidEsales\PayPalPlus\Controller\ThankYouController::class,
+        \OxidEsales\Eshop\Application\Controller\Admin\LanguageMain::class          => \OxidProfessionalServices\PayPalPlus\Controller\Admin\LanguageMain::class,
+        \OxidEsales\Eshop\Application\Controller\Admin\OrderList::class             => \OxidProfessionalServices\PayPalPlus\Controller\Admin\OrderList::class,
+        \OxidEsales\Eshop\Application\Controller\Admin\ModuleConfiguration::class   => \OxidProfessionalServices\PayPalPlus\Controller\Admin\ModuleConfiguration::class,
+        \OxidEsales\Eshop\Application\Controller\BasketController::class            => \OxidProfessionalServices\PayPalPlus\Controller\BasketController::class,
+        \OxidEsales\Eshop\Application\Controller\OrderController::class             => \OxidProfessionalServices\PayPalPlus\Controller\OrderController::class,
+        \OxidEsales\Eshop\Application\Controller\PaymentController::class           => \OxidProfessionalServices\PayPalPlus\Controller\PaymentController::class,
+        \OxidEsales\Eshop\Application\Controller\ThankYouController::class          => \OxidProfessionalServices\PayPalPlus\Controller\ThankYouController::class,
 
         // Core
-        \OxidEsales\Eshop\Core\ViewConfig::class                                    => \OxidEsales\PayPalPlus\Core\ViewConfig::class,
+        \OxidEsales\Eshop\Core\ViewConfig::class                                    => \OxidProfessionalServices\PayPalPlus\Core\ViewConfig::class,
 
         // Model
-        \OxidEsales\Eshop\Application\Model\Address::class                          => \OxidEsales\PayPalPlus\Model\Address::class,
-        \OxidEsales\Eshop\Application\Model\Basket::class                           => \OxidEsales\PayPalPlus\Model\Basket::class,
-        \OxidEsales\Eshop\Application\Model\Order::class                            => \OxidEsales\PayPalPlus\Model\Order::class,
-        \OxidEsales\Eshop\Application\Model\PaymentGateway::class                   => \OxidEsales\PayPalPlus\Model\PaymentGateway::class,
-        \OxidEsales\Eshop\Application\Model\User::class                             => \OxidEsales\PayPalPlus\Model\User::class,
+        \OxidEsales\Eshop\Application\Model\Address::class                          => \OxidProfessionalServices\PayPalPlus\Model\Address::class,
+        \OxidEsales\Eshop\Application\Model\Basket::class                           => \OxidProfessionalServices\PayPalPlus\Model\Basket::class,
+        \OxidEsales\Eshop\Application\Model\Order::class                            => \OxidProfessionalServices\PayPalPlus\Model\Order::class,
+        \OxidEsales\Eshop\Application\Model\PaymentGateway::class                   => \OxidProfessionalServices\PayPalPlus\Model\PaymentGateway::class,
+        \OxidEsales\Eshop\Application\Model\User::class                             => \OxidProfessionalServices\PayPalPlus\Model\User::class,
     ],
     'controllers'       => [
 
         // Component
-        'payppaypalpluswall'                                                => \OxidEsales\PayPalPlus\Component\Widget\WallWidget::class,
+        'payppaypalpluswall'                                                => \OxidProfessionalServices\PayPalPlus\Component\Widget\WallWidget::class,
 
         // Controller
-        'admin_payppaypalplusordertab'                                      => \OxidEsales\PayPalPlus\Controller\Admin\OrderTab::class,
-        'payppaypalpluswebhook'                                             => \OxidEsales\PayPalPlus\Controller\Webhook::class,
+        'admin_payppaypalplusordertab'                                      => \OxidProfessionalServices\PayPalPlus\Controller\Admin\OrderTab::class,
+        'payppaypalpluswebhook'                                             => \OxidProfessionalServices\PayPalPlus\Controller\Webhook::class,
 
         // Core
-        'payppaypalplusnoorderexception'                                    => \OxidEsales\PayPalPlus\Core\Exception\NoOrderException::class,
-        'payppaypalplusnopaymentfoundexception'                             => \OxidEsales\PayPalPlus\Core\Exception\NoPaymentFoundException::class,
+        'payppaypalplusnoorderexception'                                    => \OxidProfessionalServices\PayPalPlus\Core\Exception\NoOrderException::class,
+        'payppaypalplusnopaymentfoundexception'                             => \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException::class,
         'payppaypalpluspaymentdatasaveexception'                            => \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException::class,
-        'payppaypalplusrefundexception'                                     => \OxidEsales\PayPalPlus\Core\Exception\RefundException::class,
-        'payppaypalplusconfig'                                              => \OxidEsales\PayPalPlus\Core\Config::class,
-        'payppaypalplusdataaccess'                                          => \OxidEsales\PayPalPlus\Core\DataAccess::class,
-        'payppaypalplusdataconverter'                                       => \OxidEsales\PayPalPlus\Core\DataConverter::class,
-        'payppaypalpluserrorhandler'                                        => \OxidEsales\PayPalPlus\Core\ErrorHandler::class,
-        'payppaypalplusevents'                                              => \OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class,
-        'payppaypalplusinvoicepdfarticlesummary'                            => \OxidEsales\PayPalPlus\Core\InvoicePdfArticleSummary::class,
-        'payppaypalpluspdfarticlesummarypaymentinstructions'                => \OxidEsales\PayPalPlus\Core\PdfArticleSummaryPaymentInstructions::class,
-        'payppaypalpluspaymenthandler'                                      => \OxidEsales\PayPalPlus\Core\PaymentHandler::class,
-        'payppaypalpluspdfarticlesummary'                                   => \OxidEsales\PayPalPlus\Core\PdfArticleSummary::class,
-        'payppaypalplusrefundhandler'                                       => \OxidEsales\PayPalPlus\Core\RefundHandler::class,
-        'payppaypalpluswebprofilehandler'                                   => \OxidEsales\PayPalPlus\Core\WebProfileHandler::class,
-        'payppaypalplussdk'                                                 => \OxidEsales\PayPalPlus\Core\Sdk::class,
-        'payppaypalplussession'                                             => \OxidEsales\PayPalPlus\Core\Session::class,
-        'payppaypalplusshop'                                                => \OxidEsales\PayPalPlus\Core\Shop::class,
-        'payppaypalplussupercfg'                                            => \OxidEsales\PayPalPlus\Core\SuperCfg::class,
-        'payppaypalplustaxationhandler'                                     => \OxidEsales\PayPalPlus\Core\TaxationHandler::class,
-        'payppaypalplusvalidator'                                           => \OxidEsales\PayPalPlus\Core\Validator::class,
+        'payppaypalplusrefundexception'                                     => \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException::class,
+        'payppaypalplusconfig'                                              => \OxidProfessionalServices\PayPalPlus\Core\Config::class,
+        'payppaypalplusdataaccess'                                          => \OxidProfessionalServices\PayPalPlus\Core\DataAccess::class,
+        'payppaypalplusdataconverter'                                       => \OxidProfessionalServices\PayPalPlus\Core\DataConverter::class,
+        'payppaypalpluserrorhandler'                                        => \OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class,
+        'payppaypalplusevents'                                              => \OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents::class,
+        'payppaypalplusinvoicepdfarticlesummary'                            => \OxidProfessionalServices\PayPalPlus\Core\InvoicePdfArticleSummary::class,
+        'payppaypalpluspdfarticlesummarypaymentinstructions'                => \OxidProfessionalServices\PayPalPlus\Core\PdfArticleSummaryPaymentInstructions::class,
+        'payppaypalpluspaymenthandler'                                      => \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class,
+        'payppaypalpluspdfarticlesummary'                                   => \OxidProfessionalServices\PayPalPlus\Core\PdfArticleSummary::class,
+        'payppaypalplusrefundhandler'                                       => \OxidProfessionalServices\PayPalPlus\Core\RefundHandler::class,
+        'payppaypalpluswebprofilehandler'                                   => \OxidProfessionalServices\PayPalPlus\Core\WebProfileHandler::class,
+        'payppaypalplussdk'                                                 => \OxidProfessionalServices\PayPalPlus\Core\Sdk::class,
+        'payppaypalplussession'                                             => \OxidProfessionalServices\PayPalPlus\Core\Session::class,
+        'payppaypalplusshop'                                                => \OxidProfessionalServices\PayPalPlus\Core\Shop::class,
+        'payppaypalplussupercfg'                                            => \OxidProfessionalServices\PayPalPlus\Core\SuperCfg::class,
+        'payppaypalplustaxationhandler'                                     => \OxidProfessionalServices\PayPalPlus\Core\TaxationHandler::class,
+        'payppaypalplusvalidator'                                           => \OxidProfessionalServices\PayPalPlus\Core\Validator::class,
 
         // Model
-        'payppaypalplusbasketdata'                                          => \OxidEsales\PayPalPlus\Model\BasketData::class,
-        'payppaypalplusbasketitemdata'                                      => \OxidEsales\PayPalPlus\Model\BasketItemData::class,
-        'payppaypalplusdataprovider'                                        => \OxidEsales\PayPalPlus\Model\DataProvider::class,
-        'payppaypalpluspaymentdata'                                         => \OxidEsales\PayPalPlus\Model\PaymentData::class,
-        'payppaypalpluspaymentdataprovider'                                 => \OxidEsales\PayPalPlus\Model\PaymentDataProvider::class,
-        'payppaypalplusprofile'                                             => \OxidEsales\PayPalPlus\Model\Profile::class,
-        'payppaypalpluspuidata'                                             => \OxidEsales\PayPalPlus\Model\PuiData::class,
-        'payppaypalpluspuidataprovider'                                     => \OxidEsales\PayPalPlus\Model\PuiDataProvider::class,
-        'payppaypalplusrefunddata'                                          => \OxidEsales\PayPalPlus\Model\RefundData::class,
-        'payppaypalplusrefunddatalist'                                      => \OxidEsales\PayPalPlus\Model\RefundDataList::class,
-        'payppaypalplusrefunddataprovider'                                  => \OxidEsales\PayPalPlus\Model\RefundDataProvider::class,
-        'payppaypalplususerdata'                                            => \OxidEsales\PayPalPlus\Model\UserData::class
+        'payppaypalplusbasketdata'                                          => \OxidProfessionalServices\PayPalPlus\Model\BasketData::class,
+        'payppaypalplusbasketitemdata'                                      => \OxidProfessionalServices\PayPalPlus\Model\BasketItemData::class,
+        'payppaypalplusdataprovider'                                        => \OxidProfessionalServices\PayPalPlus\Model\DataProvider::class,
+        'payppaypalpluspaymentdata'                                         => \OxidProfessionalServices\PayPalPlus\Model\PaymentData::class,
+        'payppaypalpluspaymentdataprovider'                                 => \OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider::class,
+        'payppaypalplusprofile'                                             => \OxidProfessionalServices\PayPalPlus\Model\Profile::class,
+        'payppaypalpluspuidata'                                             => \OxidProfessionalServices\PayPalPlus\Model\PuiData::class,
+        'payppaypalpluspuidataprovider'                                     => \OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider::class,
+        'payppaypalplusrefunddata'                                          => \OxidProfessionalServices\PayPalPlus\Model\RefundData::class,
+        'payppaypalplusrefunddatalist'                                      => \OxidProfessionalServices\PayPalPlus\Model\RefundDataList::class,
+        'payppaypalplusrefunddataprovider'                                  => \OxidProfessionalServices\PayPalPlus\Model\RefundDataProvider::class,
+        'payppaypalplususerdata'                                            => \OxidProfessionalServices\PayPalPlus\Model\UserData::class
     ],
     'templates'   => [
         'payppaypalpluswall.tpl'  => 'payp/paypalplus/views/widgets/payppaypalpluswall.tpl',
@@ -495,7 +495,7 @@ $aModule = [
         ]
     ],
     'events'      => [
-        'onActivate'   => '\OxidEsales\PayPalPlus\Core\Events::onActivate',
-        'onDeactivate' => '\OxidEsales\PayPalPlus\Core\Events::onDeactivate'
+        'onActivate'   => '\OxidProfessionalServices\PayPalPlus\Core\Events::onActivate',
+        'onDeactivate' => '\OxidProfessionalServices\PayPalPlus\Core\Events::onDeactivate'
     ]
 ];

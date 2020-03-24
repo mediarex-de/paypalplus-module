@@ -19,7 +19,7 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller\Admin;
+namespace OxidProfessionalServices\PayPalPlus\Controller\Admin;
 
 class OrderList extends OrderList_parent
 {
@@ -34,9 +34,9 @@ class OrderList extends OrderList_parent
         $sTemplate = parent::render();
 
         $aPayments = array();
-        $sPayment = \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter(\OxidEsales\PayPalPlus\Controller\PaymentController::class);
+        $sPayment = \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter(\OxidProfessionalServices\PayPalPlus\Controller\PaymentController::class);
 
-        $this->_aViewData[\OxidEsales\PayPalPlus\Controller\PaymentController::class] = $sPayment ? $sPayment : -1;
+        $this->_aViewData[\OxidProfessionalServices\PayPalPlus\Controller\PaymentController::class] = $sPayment ? $sPayment : -1;
 
         /** @var \OxidEsales\Eshop\Core\Model\ListModel $oPaymentList */
         $oPaymentList = oxNew(\OxidEsales\Eshop\Core\Model\ListModel::class);
@@ -65,7 +65,7 @@ class OrderList extends OrderList_parent
         $oDb = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
         $sQ = parent::_prepareWhereQuery($aWhere, $sqlFull);
 
-        $sPayment = \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter(\OxidEsales\PayPalPlus\Controller\PaymentController::class);
+        $sPayment = \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter(\OxidProfessionalServices\PayPalPlus\Controller\PaymentController::class);
         if ($sPayment && $sPayment != '-1') {
             if ($sPayment == 'pui') {
                 $sQ .= " and ( payppaypalpluspui.oxid  IS NOT NULL )";

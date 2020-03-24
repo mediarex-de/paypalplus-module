@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller;
+namespace OxidProfessionalServices\PayPalPlus\Controller;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\BasketController.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\BasketController.
  * Overloads Basket controller.
  *
  * @see \OxidEsales\Eshop\Application\Controller\BasketController
@@ -51,7 +51,7 @@ class BasketController extends BasketController_parent
 
             $oPayPalSession = $oShop->getPayPalPlusSession();
 
-            /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
             $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidEsales\PaypalPlus\Core\PaymentHandler::class);
             $oPayPalPaymentHandler->init();
             $oPayPalPaymentHandler->create($oPayPalSession->getApiContext());

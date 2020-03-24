@@ -19,7 +19,7 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
  * PayPal Plus Refund data list manager class.
@@ -49,7 +49,7 @@ class RefundDataList extends \OxidEsales\Eshop\Core\Model\ListModel
         $sSelect = sprintf(
             "SELECT * FROM `%s` WHERE `OXSALEID` = %s ORDER BY `OXDATECREATED`",
             $this->getBaseObject()->getCoreTableName(),
-            \OxidEsales\PayPalPlus\Core\Shop::getShop()->getDb()->quote($sSaleId)
+            \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getDb()->quote($sSaleId)
         );
 
         $this->selectString($sSelect);
@@ -65,7 +65,7 @@ class RefundDataList extends \OxidEsales\Eshop\Core\Model\ListModel
      */
     public function getRefundedSumBySaleId($sSaleId)
     {
-        $oDb = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getDb();
+        $oDb = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getDb();
 
         $sQuery = sprintf(
             "SELECT SUM(`OXTOTAL`) FROM `%s` WHERE `OXSALEID` = %s",

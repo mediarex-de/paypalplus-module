@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\PaymentHandler.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler.
  * PayPal Plus Payment instance handler: create payment object, fill it with data, execute payment, etc.
  */
 class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
@@ -51,14 +51,14 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     /**
      * Instance of PaymentData as stored in the database
      *
-     * @var null|\OxidEsales\PayPalPlus\Model\PaymentData
+     * @var null|\OxidProfessionalServices\PayPalPlus\Model\PaymentData
      */
     protected $_oPaymentData = null;
 
     /**
      * Taxation handler instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\TaxationHandler
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\TaxationHandler
      */
     protected $_oTaxationHandler = null;
 
@@ -97,12 +97,12 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     /**
      * Get models taxation handler instance.
      *
-     * @return null|\OxidEsales\PayPalPlus\Core\TaxationHandler
+     * @return null|\OxidProfessionalServices\PayPalPlus\Core\TaxationHandler
      */
     public function getTaxationHandler()
     {
         if (is_null($this->_oTaxationHandler)) {
-            $this->_oTaxationHandler = $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\TaxationHandler::class);
+            $this->_oTaxationHandler = $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\TaxationHandler::class);
         }
 
         return $this->_oTaxationHandler;
@@ -194,7 +194,7 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      *
      * @param string                                                            $sPayerId
      * @param \PayPal\Rest\ApiContext                                           $oApiContext
-     * @param \OxidEsales\PayPalPlus\Model\Order|\OxidEsales\Eshop\Application\Model\Order   $oOrder
+     * @param \OxidProfessionalServices\PayPalPlus\Model\Order|\OxidEsales\Eshop\Application\Model\Order   $oOrder
      *
      * @return bool
      */
@@ -289,8 +289,8 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
         $oSdk              = $this->getSdk();
         $oPayPalPlusConfig = $this->getShop()->getPayPalPlusConfig();
 
-        /** @var \OxidEsales\PayPalPlus\Model\BasketData $oBasketData */
-        $oBasketData = $this->getNew(\OxidEsales\PayPalPlus\Model\BasketData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\BasketData $oBasketData */
+        $oBasketData = $this->getNew(\OxidProfessionalServices\PayPalPlus\Model\BasketData::class);
         $oItemList   = $this->_getItemList($oBasketData);
 
         if ($blAddUserData) {
@@ -347,11 +347,11 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     /**
      * Get SDK object Amount filled with basket data including Details object.
      *
-     * @param \OxidEsales\PayPalPlus\Model\BasketData $oBasketData
+     * @param \OxidProfessionalServices\PayPalPlus\Model\BasketData $oBasketData
      *
      * @return \PayPal\Api\Amount
      */
-    protected function _getAmount(\OxidEsales\PayPalPlus\Model\BasketData $oBasketData)
+    protected function _getAmount(\OxidProfessionalServices\PayPalPlus\Model\BasketData $oBasketData)
     {
         $oSdk        = $this->getSdk();
         $oDataAccess = $this->getShop()->getDataAccess();
@@ -372,11 +372,11 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     /**
      * Get SDK object ItemList filled with Item objects containing eShop basket items data.
      *
-     * @param \OxidEsales\PayPalPlus\Model\BasketData $oBasketData
+     * @param \OxidProfessionalServices\PayPalPlus\Model\BasketData $oBasketData
      *
      * @return \PayPal\Api\ItemList
      */
-    protected function _getItemList(\OxidEsales\PayPalPlus\Model\BasketData $oBasketData)
+    protected function _getItemList(\OxidProfessionalServices\PayPalPlus\Model\BasketData $oBasketData)
     {
         $oSdk = $this->getSdk();
 
@@ -385,7 +385,7 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
         $aBasketItems = (array)$oBasketData->getItemList();
 
         foreach ($aBasketItems as $oBasketItemData) {
-            /** @var \OxidEsales\PayPalPlus\Model\BasketItemData $oBasketItemData */
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\BasketItemData $oBasketItemData */
 
             /** @var \PayPal\Api\Item $oItem */
             $oItem = $oSdk->newItem();
@@ -407,8 +407,8 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     {
         $oDataAccess = $this->getShop()->getDataAccess();
 
-        /** @var \OxidEsales\PayPalPlus\Model\UserData $oUserData */
-        $oUserData = $this->getNew(\OxidEsales\PayPalPlus\Model\UserData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\UserData $oUserData */
+        $oUserData = $this->getNew(\OxidProfessionalServices\PayPalPlus\Model\UserData::class);
 
         /** @var \PayPal\Api\Address $oShippingAddress */
         $oShippingAddress = $this->getSdk()->newShippingAddress();
@@ -500,7 +500,7 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      * @param \OxidEsales\Eshop\Application\Model\Order     $oOrder
      * @param \PayPal\Api\Payment                           $oPayment
      *
-     * @return bool|\OxidEsales\PayPalPlus\Model\PaymentData
+     * @return bool|\OxidProfessionalServices\PayPalPlus\Model\PaymentData
      */
     protected function _savePaymentData(\OxidEsales\Eshop\Application\Model\Order $oOrder, PayPal\Api\Payment $oPayment)
     {
@@ -537,17 +537,17 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      * @param \OxidEsales\Eshop\Application\Model\Order  $oOrder
      * @param \PayPal\Api\Payment                        $oPayment
      *
-     * @return bool|\OxidEsales\PayPalPlus\Model\PuiData|string
+     * @return bool|\OxidProfessionalServices\PayPalPlus\Model\PuiData|string
      */
     protected function _savePaymentUponInvoiceData(\OxidEsales\Eshop\Application\Model\Order $oOrder, PayPal\Api\Payment $oPayment)
     {
         $oShop = $this->getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Model\PuiData $oDataProvider */
-        $oDataProvider = $oShop->getNew(\OxidEsales\PayPalPlus\Model\PuiData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\PuiData $oDataProvider */
+        $oDataProvider = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\PuiData::class);
         $oDataProvider->init($oOrder, $oPayment);
 
-        /** @var \OxidEsales\PayPalPlus\Model\PuiData $oDataModel */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\PuiData $oDataModel */
         $oDataModel = $this->_getPayPalPlusPuiDataModel();
         $oShop->getDataAccess()->transfuse($oDataProvider, $oDataModel, $oDataProvider->getFields());
 
@@ -563,13 +563,13 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      *
      * @codeCoverageIgnore
      *
-     * @return \OxidEsales\PayPalPlus\Model\PuiData
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PuiData
      */
     protected function _getPayPalPlusPuiDataModel()
     {
         $oShop = $this->getShop();
-        /** @var \OxidEsales\PayPalPlus\Model\PuiData $oDataModel */
-        $oDataModel = $oShop->getNew(\OxidEsales\PayPalPlus\Model\PuiData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\PuiData $oDataModel */
+        $oDataModel = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\PuiData::class);
 
         return $oDataModel;
     }
@@ -608,8 +608,8 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      */
     public function validateUserData()
     {
-        /** @var \OxidEsales\PayPalPlus\Model\UserData $oUserData */
-        $oUserData = $this->getNew(\OxidEsales\PayPalPlus\Model\UserData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\UserData $oUserData */
+        $oUserData = $this->getNew(\OxidProfessionalServices\PayPalPlus\Model\UserData::class);
 
         $this->_validateBillingPhone($oUserData->getBillingAddressValuePhone())
             ->_validateShippingPhone($oUserData->getShippingAddressValuePhone());
@@ -826,7 +826,7 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
     {
         $oShop = $this->getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Model\PuiDataProvider $oDataProvider */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider $oDataProvider */
         $oDataProvider = $this->_getPayPalPlusPuiDataProvider();
         $oDataProvider->init($oOrder, $oPayment);
         $sPaymentInstructionInstructionType = $oDataProvider->getPaymentInstructionInstructionType();
@@ -839,14 +839,14 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      *
      * @codeCoverageIgnore
      *
-     * @return \OxidEsales\PayPalPlus\Model\PuiDataProvider
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider
      */
     protected function _getPayPalPlusPuiDataProvider()
     {
         $oShop = $this->getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Model\PuiDataProvider $oDataProvider */
-        $oDataProvider = $oShop->getNew(\OxidEsales\PayPalPlus\Model\PuiDataProvider::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider $oDataProvider */
+        $oDataProvider = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\PuiDataProvider::class);
 
         return $oDataProvider;
     }
@@ -883,19 +883,19 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
      *
      * @codeCoverageIgnore
      *
-     * @return \OxidEsales\PayPalPlus\Model\PaymentDataProvider
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider
      */
     protected function _getPayPalPlusPaymentDataProvider()
     {
         $oShop = $this->getShop();
 
-        $oPaymentDataProvider = $oShop->getNew(\OxidEsales\PayPalPlus\Model\PaymentDataProvider::class);
+        $oPaymentDataProvider = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider::class);
 
         return $oPaymentDataProvider;
     }
 
     /**
-     * @param \OxidEsales\PayPalPlus\Core\Sdk   $oSdk
+     * @param \OxidProfessionalServices\PayPalPlus\Core\Sdk   $oSdk
      * @param \PayPal\Api\Payer                 $oPayer
      */
     protected function addPayerInfo($oSdk, $oPayer)
@@ -904,8 +904,8 @@ class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
         $oPayerInfo      = $oSdk->newPayerInfo();
         $oBillingAddress = $oSdk->newAddress();
         $oDataAccess     = $this->getShop()->getDataAccess();
-        /** @var \OxidEsales\PayPalPlus\Model\UserData $oUserData */
-        $oUserData = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Model\UserData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\UserData $oUserData */
+        $oUserData = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\UserData::class);
         $oDataAccess->transfuse($oUserData, $oBillingAddress, $oUserData->getFields('Address'), 'BillingAddressValue');
         $oPayerInfo->setBillingAddress($oBillingAddress);
         $oDataAccess->transfuse($oUserData, $oPayerInfo, $oUserData->getFields('PayerInfo'), '');

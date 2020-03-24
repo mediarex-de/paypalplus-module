@@ -19,7 +19,7 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 // Set eShop timezone as default (to avoid overwriting of the timezone by SDK)
 ini_set('date.timezone', date_default_timezone_get());
@@ -31,7 +31,7 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
  * Class Sdk
  * PayPal REST API SDK driver for OXID eShop.
  */
-class Sdk extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class Sdk extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Available SDK API classes to load with magic `new[ApiClass]` calls.
@@ -86,10 +86,10 @@ class Sdk extends \OxidEsales\PayPalPlus\Core\SuperCfg
      */
     public function __call($sName, $aArguments)
     {
-        $oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Core\SuperCfg $oSuperCfg */
-        $oSuperCfg = $oShop->getFromRegistry(\OxidEsales\PayPalPlus\Core\SuperCfg::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\SuperCfg $oSuperCfg */
+        $oSuperCfg = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\SuperCfg::class);
 
         $mReturn = null;
         $mClassToCall = $oSuperCfg->parseCallFor('new', $sName);
@@ -117,7 +117,7 @@ class Sdk extends \OxidEsales\PayPalPlus\Core\SuperCfg
      */
     public function getSdkConfig($blAuthDataOnly = false)
     {
-        $oModuleConfig = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig();
+        $oModuleConfig = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig();
 
         if (!empty($blAuthDataOnly)) {
 

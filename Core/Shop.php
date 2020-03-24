@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\Shop
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Shop
  * OXID eShop wrapper class for shop methods aliases.
  * It also provides getters for most common module core classes from registry.
  */
@@ -31,7 +31,7 @@ class Shop extends \OxidEsales\Eshop\Core\Base
     /**
      * Get an instance of itself.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public static function getShop()
     {
@@ -123,7 +123,7 @@ class Shop extends \OxidEsales\Eshop\Core\Base
     /**
      * Set shop basket to session.
      *
-     * @return \OxidEsales\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket
+     * @return \OxidProfessionalServices\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket
      */
     public function setBasket(\OxidEsales\Eshop\Application\Model\Basket $oBasket)
     {
@@ -133,7 +133,7 @@ class Shop extends \OxidEsales\Eshop\Core\Base
     /**
      * Get shop basket from session.
      *
-     * @return \OxidEsales\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket
+     * @return \OxidProfessionalServices\PayPalPlus\Model\Basket|\OxidEsales\Eshop\Application\Model\Basket
      */
     public function getBasket()
     {
@@ -251,32 +251,32 @@ class Shop extends \OxidEsales\Eshop\Core\Base
     /**
      * Get loaded PayPal Plus module data class.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Events
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Events
      */
     public function getPayPalPlusModule()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\Events::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Events::class);
     }
 
     /**
      * Get PayPal Plus configuration instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Config
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Config
      */
     public function getPayPalPlusConfig()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\Config::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Config::class);
     }
 
     /**
      * Get initialized PayPal Plus session instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Session::class
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Session::class
      */
     public function getPayPalPlusSession()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\Session $oPayPalSession */
-        $oPayPalSession = $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\Session::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\Session $oPayPalSession */
+        $oPayPalSession = $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Session::class);
         $oPayPalSession->init();
 
         return $oPayPalSession;
@@ -285,40 +285,40 @@ class Shop extends \OxidEsales\Eshop\Core\Base
     /**
      * Get data access helper instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataAccess
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataAccess
      */
     public function getDataAccess()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\DataAccess::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\DataAccess::class);
     }
 
     /**
      * Get data casting and formatting helper instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataConverter
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     public function getConverter()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\DataConverter::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\DataConverter::class);
     }
 
     /**
      * Get module, payment method and session data validator instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Validator
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Validator
      */
     public function getValidator()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\Validator::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\Validator::class);
     }
 
     /**
      * Get error handler instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\ErrorHandler
+     * @return \OxidProfessionalServices\PayPalPlus\Core\ErrorHandler
      */
     public function getErrorHandler()
     {
-        return $this->getFromRegistry(\OxidEsales\PayPalPlus\Core\ErrorHandler::class);
+        return $this->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class);
     }
 }

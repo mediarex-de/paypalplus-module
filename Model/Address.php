@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\Address.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\Address.
  * Overloads Address model.
  *
  * @see \OxidEsales\Eshop\Application\Model\Address
@@ -41,8 +41,8 @@ class Address extends Address_parent
 
         if (!empty($blReturn)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\Profile $oProfile */
-            $oProfile = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getNew(\OxidEsales\PayPalPlus\Model\Profile::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\Profile $oProfile */
+            $oProfile = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\Profile::class);
             $oProfile->postSave($this);
         }
 

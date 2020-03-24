@@ -14,12 +14,12 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2016
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\WebProfileHandler.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\WebProfileHandler.
  */
-class WebProfileHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class WebProfileHandler extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * @var null|Paypal\Api\FlowConfig

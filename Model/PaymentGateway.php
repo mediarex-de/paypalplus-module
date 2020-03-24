@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\PaymentGateway.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\PaymentGateway.
  * Overloads PaymentGateway model.
  *
  * @see OxidEsales\Eshop\Application\Model\PaymentGateway
@@ -32,7 +32,7 @@ class PaymentGateway extends PaymentGateway_parent
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
@@ -52,12 +52,12 @@ class PaymentGateway extends PaymentGateway_parent
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -172,8 +172,8 @@ class PaymentGateway extends PaymentGateway_parent
 
         if ($oShop->getValidator()->isPaymentCreated($oApprovedPayment) and !empty($sPayerId)) {
 
-            /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaymentHandler::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class);
             $oPayPalPaymentHandler->setPayment($oApprovedPayment);
             $blSuccess = (bool) $oPayPalPaymentHandler->execute($sPayerId, $oPayPalSession->getApiContext(), $oOrder);
         }

@@ -1,5 +1,5 @@
 {
-  "name": "oxid-esales/paypalplus-module",
+  "name": "oxid-professional-services/paypalplus-module",
   "description": "PayPal Plus payments module for OXID eShop",
   "type": "oxideshop-module",
   "keywords": ["oxid", "modules", "eShop"],
@@ -30,7 +30,7 @@
   },
   "autoload": {
     "psr-4": {
-      "OxidEsales\\PayPalPlus\\": "../../../source/modules/payp/paypalplus"
+      "OxidProfessionalServices\\PayPalPlus\\": "../../../source/modules/payp/paypalplus"
     }
   }
 }

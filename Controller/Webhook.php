@@ -19,10 +19,10 @@
  * @copyright (C) OXID eSales AG 2003-2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller;
+namespace OxidProfessionalServices\PayPalPlus\Controller;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\Webhook
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\Webhook
  *
  * This provides the endpoint for request from PayPal
  */
@@ -40,14 +40,14 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
     /**
      * Config wrapper instance
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\SuperCfg
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\SuperCfg
      */
     protected $_oPayPalPlusSuperCfg = null;
 
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
@@ -62,7 +62,7 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
     public function render()
     {
         /** @var string $sHeaderCode Send 202 Header if everything went fine and PayPal will not send the event again */
-        $sHeaderCode = \OxidEsales\PayPalPlus\Controller\Webhook::HTTP_HEADER_202;
+        $sHeaderCode = \OxidProfessionalServices\PayPalPlus\Controller\Webhook::HTTP_HEADER_202;
         /** @var string $sStatus is for humans only */
         $sStatus = 'OK';
 
@@ -87,7 +87,7 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
             /**
              * If anything went wrong sent a HTTP 400 status, so PayPal will resend the webhook
              */
-            $sHeaderCode = \OxidEsales\PayPalPlus\Controller\Webhook::HTTP_HEADER_503;
+            $sHeaderCode = \OxidProfessionalServices\PayPalPlus\Controller\Webhook::HTTP_HEADER_503;
             /** @var string $sStatus There may be different sources for the message */
             $sStatus = method_exists($oException, 'getData') && $oException->getData() ? $oException->getData() : $oException->getMessage();
 
@@ -112,7 +112,7 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      *
      * @param $oWebhookEvent
      *
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\NoPaymentFoundException
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException
      * @throws \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException
      */
     protected function _processEvent(\PayPal\Api\WebhookEvent $oWebhookEvent)
@@ -179,7 +179,7 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
             $oPayPalPlusSuperCfg = $this->getPayPalPlusSuperCfg();
             /** @var \PayPal\Rest\ApiContext $oApiContext */
             $oApiContext = $oPayPalPlusSuperCfg->getShop()->getPayPalPlusSession()->getApiContext();
-            /** @var \OxidEsales\PayPalPlus\Core\Sdk $oSdk */
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\Sdk $oSdk */
             $oSdk = $oPayPalPlusSuperCfg->getSdk();
 
             /**
@@ -250,13 +250,13 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      *
      * @codeCoverageIgnore
      *
-     * @return null|object|\OxidEsales\PayPalPlus\Core\SuperCfg
+     * @return null|object|\OxidProfessionalServices\PayPalPlus\Core\SuperCfg
      *
      */
     public function getPayPalPlusSuperCfg()
     {
         if (is_null($this->_oPayPalPlusSuperCfg)) {
-            $this->_oPayPalPlusSuperCfg = oxNew(\OxidEsales\PayPalPlus\Core\SuperCfg::class);
+            $this->_oPayPalPlusSuperCfg = oxNew(\OxidProfessionalServices\PayPalPlus\Core\SuperCfg::class);
         }
 
         return $this->_oPayPalPlusSuperCfg;
@@ -265,12 +265,12 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PayPalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -285,8 +285,8 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      */
     protected function _throwNoPaymentFoundException()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\Exception\NoPaymentFoundException $oEx */
-        $oEx = $this->getShop()->getNew(\OxidEsales\PayPalPlus\Core\Exception\NoPaymentFoundException::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException $oEx */
+        $oEx = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException::class);
         $sMessage = $this->getShop()->translate('payp_PAYPALPLUS_ERROR_NO_PAYMENT_FOUND_FOR_EVENT');
         $oEx->setMessage($sMessage);
         throw $oEx;
@@ -349,11 +349,11 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      *
      * @codeCoverageIgnore
      *
-     * @return \OxidEsales\PayPalPlus\Model\PaymentDataProvider
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider
      */
     protected function _getPaymentDataModel()
     {
-        $oPaymentData = oxNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+        $oPaymentData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
 
         return $oPaymentData;
     }

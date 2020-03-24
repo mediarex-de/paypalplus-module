@@ -280,7 +280,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getApiContext')->will($this->returnValue(null));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertFalse($this->SUT->isApiAvailable());
     }
@@ -294,7 +294,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getApiContext')->will($this->returnValue($oApiContext));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertFalse($this->SUT->isApiAvailable());
     }
@@ -313,7 +313,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getApiContext')->will($this->returnValue($oApiContext));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertFalse($this->SUT->isApiAvailable());
     }
@@ -332,7 +332,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getApiContext')->will($this->returnValue($oApiContext));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertTrue($this->SUT->isApiAvailable());
     }
@@ -365,7 +365,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getPayment')->will($this->returnValue(null));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertFalse($this->SUT->isPaymentCreated());
     }
@@ -379,7 +379,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getPayment')->will($this->returnValue($oPayment));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertFalse($this->SUT->isPaymentCreated());
     }
@@ -393,7 +393,7 @@ class paypPayPalPlusValidatorTest extends OxidTestCase
         $oSession->expects($this->once())->method('init');
         $oSession->expects($this->once())->method('getPayment')->will($this->returnValue($oPayment));
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\Session::class, $oSession);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\Session::class, $oSession);
 
         $this->assertTrue($this->SUT->isPaymentCreated());
     }

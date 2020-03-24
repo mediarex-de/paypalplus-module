@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\Order.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\Order.
  * Overloads Order model.
  *
  * @see \OxidEsales\Eshop\Application\Model\Order
@@ -34,7 +34,7 @@ class Order extends Order_parent
     /**
      * Instance of the PayPal Plus Payment related to this order.
      *
-     * @var \OxidEsales\PayPalPlus\Model\PaymentData $_oOrderPayment
+     * @var \OxidProfessionalServices\PayPalPlus\Model\PaymentData $_oOrderPayment
      */
     protected $_oOrderPayment;
 
@@ -64,7 +64,7 @@ class Order extends Order_parent
      */
     public function delete($sOxId = null)
     {
-        /** @var \OxidEsales\PayPalPlus\Model\Order|\OxidEsales\Eshop\Application\Model\Order $this */
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\Order|\OxidEsales\Eshop\Application\Model\Order $this */
 
         $blOrderDeleted = $this->_paypPayPalPlusOxOrder_delete_parent($sOxId);
 
@@ -74,8 +74,8 @@ class Order extends Order_parent
                 $sOxId = $this->getId();
             }
 
-            /** @var \OxidEsales\PayPalPlus\Model\PaymentData $oPayPalPaymentData */
-            $oPayPalPaymentData = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\PaymentData $oPayPalPaymentData */
+            $oPayPalPaymentData = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
 
             if ($oPayPalPaymentData->loadByOrderId($sOxId)) {
                 return $oPayPalPaymentData->delete();
@@ -100,7 +100,7 @@ class Order extends Order_parent
      * Get Payment Instructions, if this payment was made with PayPal Plus Payment upon Invoice.
      * This is needed by the email templates.
      *
-     * @return null|\OxidEsales\PayPalPlus\Model\PuiData
+     * @return null|\OxidProfessionalServices\PayPalPlus\Model\PuiData
      */
     public function getPaymentInstructions()
     {
@@ -110,7 +110,7 @@ class Order extends Order_parent
         if ($oPayment) {
             $sPaymentId = $oPayment->getPaymentId();
 
-            $oPayPalPlusPuiData = oxNew(\OxidEsales\PayPalPlus\Model\PuiData::class);
+            $oPayPalPlusPuiData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\PuiData::class);
             $oPayPalPlusPuiData->loadByPaymentId($sPaymentId);
             if ($oPayPalPlusPuiData->isLoaded()) {
                 $oPaymentInstructions = $oPayPalPlusPuiData;
@@ -123,14 +123,14 @@ class Order extends Order_parent
     /**
      * Get PayPal Plus Payment data object related to current order.
      *
-     * @return null|\OxidEsales\PayPalPlus\Model\PaymentData
+     * @return null|\OxidProfessionalServices\PayPalPlus\Model\PaymentData
      */
     public function getOrderPayment()
     {
         if (is_null($this->_oOrderPayment)) {
 
-            /** @var \OxidEsales\PayPalPlus\Model\PaymentData $oPayPalPaymentData */
-            $oPaymentData = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Model\PaymentData $oPayPalPaymentData */
+            $oPaymentData = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
 
             if ($oPaymentData->loadByOrderId($this->getId())) {
                 $this->_oOrderPayment = $oPaymentData;
@@ -300,15 +300,15 @@ class Order extends Order_parent
     }
 
     /**
-     * Throw a \OxidEsales\PayPalPlus\Core\Exception\RefundException exception.
+     * Throw a \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException exception.
      *
      * @param $sMessage
      *
-     * @throws \OxidEsales\PayPalPlus\Core\Exception\RefundException
+     * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
      */
     protected function _throwRefundException($sMessage)
     {
-        $oEx = oxNew(\OxidEsales\PayPalPlus\Core\Exception\RefundException::class);
+        $oEx = oxNew(\OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException::class);
         $oEx->setMessage($sMessage);
 
         throw $oEx;
@@ -332,7 +332,7 @@ class Order extends Order_parent
     protected function _setPayPalPaymentPlusStatusCompleted()
     {
         /** Get the string for the completed status */
-        $sStatusCompleted = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig()->getRefundablePaymentStatus();
+        $sStatusCompleted = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig()->getRefundablePaymentStatus();
 
         /** Get the orders' PayPal Plus Payment data */
         $oPayPalPlusPaymentData = $this->getOrderPayment();
@@ -354,7 +354,7 @@ class Order extends Order_parent
     protected function _orderWasPaidWithPayPalPlus()
     {
         $blOrderIsPaid = $this->_isOrderPaid();
-        $blOrderPaymentTypeIsPayPalPlus = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig()->getPayPalPlusMethodId() == $this->oxorder__oxpaymenttype->value;
+        $blOrderPaymentTypeIsPayPalPlus = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getPayPalPlusConfig()->getPayPalPlusMethodId() == $this->oxorder__oxpaymenttype->value;
 
         return $blOrderIsPaid && $blOrderPaymentTypeIsPayPalPlus;
     }
@@ -368,7 +368,7 @@ class Order extends Order_parent
     {
         $sPaid = (string) $this->oxorder__oxpaid->value;
 
-        return $sPaid !== \OxidEsales\PayPalPlus\Model\Order::ORDER_UNPAID_STRING;
+        return $sPaid !== \OxidProfessionalServices\PayPalPlus\Model\Order::ORDER_UNPAID_STRING;
     }
 
     /**
@@ -398,9 +398,9 @@ class Order extends Order_parent
 
         $sShopVersion = \OxidEsales\Eshop\Core\Registry::getConfig()->getVersion();
         if (version_compare($sShopVersion, "4.9.0", "<")) {
-            $sPdfArticleSummaryClass = \OxidEsales\PayPalPlus\Core\PdfArticleSummary::class;
+            $sPdfArticleSummaryClass = \OxidProfessionalServices\PayPalPlus\Core\PdfArticleSummary::class;
         } else {
-            $sPdfArticleSummaryClass = \OxidEsales\PayPalPlus\Core\InvoicePdfArticleSummary::class;
+            $sPdfArticleSummaryClass = \OxidProfessionalServices\PayPalPlus\Core\InvoicePdfArticleSummary::class;
         }
 
         // preparing order curency info

@@ -271,7 +271,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug')->with($oException, $oPayment);
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment'));
@@ -289,7 +289,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->never())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment'));
@@ -313,7 +313,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug', 'parseError'));
         $oErrorHandler->expects($this->once())->method('debug')->with($oException);
         $oErrorHandler->expects($this->once())->method('parseError')->with($oException);
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment'));
@@ -367,7 +367,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug', 'parseError'));
         $oErrorHandler->expects($this->never())->method('debug');
         $oErrorHandler->expects($this->never())->method('parseError');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment'));
@@ -395,7 +395,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug')->with($oException);
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment', 'getSdk'));
@@ -424,7 +424,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock('paypPayPalPlusPaymentHandler', array('__call', 'getPayment', 'getSdk'));
@@ -454,7 +454,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock(
@@ -501,7 +501,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         /** @var PHPUnit_Framework_MockObject_MockObject|paypPayPalPlusPaymentHandler $SUT */
         $SUT = $this->getMock(
@@ -548,7 +548,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->never())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         $oOrder = $this->getMock('oxOrder', array('__construct', '__call'));
 
@@ -637,7 +637,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->never())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         $oOrder = $this->getMock('oxOrder', array('__construct', '__call', 'setPaymentDateAndTime', 'save', 'getId'));
         $oOrder->expects($this->once())->method('save')->will($this->returnValue(true));
@@ -691,7 +691,7 @@ class paypPayPalPlusPaymentHandlerTest extends OxidTestCase
 
         $oErrorHandler = $this->getMock('paypPayPalPlusErrorHandler', array('__call', 'debug'));
         $oErrorHandler->expects($this->once())->method('debug');
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\ErrorHandler::class, $oErrorHandler);
 
         $oOrder = $this->getMock('oxOrder', array('__construct', '__call', 'setPaymentDateAndTime', 'save', 'getId'));
 

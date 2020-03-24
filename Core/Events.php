@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\Events
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Events
  * Extends oxModule class handles module setup.
  * Class is also used to get module-related parameters from.
  */
@@ -52,8 +52,8 @@ class Events extends \OxidEsales\Eshop\Core\Module\Module
      */
     public static function onActivate()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\PaypalPlusEvents $oEventHandler */
-        $oEventHandler = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents $oEventHandler */
+        $oEventHandler = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents::class);
         $oEventHandler->activate();
     }
 
@@ -62,8 +62,8 @@ class Events extends \OxidEsales\Eshop\Core\Module\Module
      */
     public static function onDeactivate()
     {
-        /** @var \OxidEsales\PayPalPlus\Core\PaypalPlusEvents $oEventHandler */
-        $oEventHandler = \OxidEsales\PayPalPlus\Core\Shop::getShop()->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents $oEventHandler */
+        $oEventHandler = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop()->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents::class);
         $oEventHandler->deactivate();
     }
 }

@@ -384,9 +384,9 @@ class paypPayPalPlusDataAccessTest extends OxidTestCase
             case 'test4':
                 return new PayPal\Api\Address();
             case 'test5':
-                return oxNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+                return oxNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
             case 'test6':
-                return oxNew(\OxidEsales\PayPalPlus\Model\RefundData::class);
+                return oxNew(\OxidProfessionalServices\PayPalPlus\Model\RefundData::class);
             default:
                 return oxNew(\OxidEsales\Eshop\Core\Base::class);
         }
@@ -603,7 +603,7 @@ class paypPayPalPlusDataAccessTest extends OxidTestCase
      */
     protected function _getTransfusedExpectedPaymentDataFromPaymentDataProvider()
     {
-        $oPaymentData = oxNew(\OxidEsales\PayPalPlus\Model\PaymentData::class);
+        $oPaymentData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\PaymentData::class);
         $oPaymentData->payppaypalpluspayment__oxorderid = new oxField('testOrderId');
         $oPaymentData->payppaypalpluspayment__oxsaleid = new oxField('testSaleId');
         $oPaymentData->payppaypalpluspayment__oxpaymentid = new oxField('testPaymentId');
@@ -646,7 +646,7 @@ class paypPayPalPlusDataAccessTest extends OxidTestCase
      */
     protected function _getTransfusedExpectedRefundDataFromRefundDataProvider()
     {
-        $oRefundData = oxNew(\OxidEsales\PayPalPlus\Model\RefundData::class);
+        $oRefundData = oxNew(\OxidProfessionalServices\PayPalPlus\Model\RefundData::class);
         $oRefundData->payppaypalplusrefund__oxsaleid = new oxField('testSaleId');
         $oRefundData->payppaypalplusrefund__oxrefundid = new oxField('testRefundId');
         $oRefundData->payppaypalplusrefund__oxstatus = new oxField('testStatus');

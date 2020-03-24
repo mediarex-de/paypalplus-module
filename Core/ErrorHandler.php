@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\ErrorHandler.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\ErrorHandler.
  * Error handling helper: process exceptions, set and trigger errors display.
  */
-class ErrorHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class ErrorHandler extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Error code for general (not parsed) PayPal Plus API errors.
@@ -141,7 +141,7 @@ class ErrorHandler extends \OxidEsales\PayPalPlus\Core\SuperCfg
             }
         }
 
-        if ($oException instanceof \OxidEsales\PayPalPlus\Core\Exception\RefundException) {
+        if ($oException instanceof \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException) {
             /** Print Exception to EXCEPTION_LOG.txt */
             $oException->debugOut();
 

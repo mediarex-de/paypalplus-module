@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\DataConverter.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\DataConverter.
  * Data casting and transformation for PayPal API.
  */
-class DataConverter extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class DataConverter extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Convert a value to string.

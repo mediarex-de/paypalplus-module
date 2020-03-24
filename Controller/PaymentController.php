@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller;
+namespace OxidProfessionalServices\PayPalPlus\Controller;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\PaymentController.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\PaymentController.
  * Overloads Payment controller.
  *
  * @see \OxidEsales\Eshop\Application\Controller\PaymentController
@@ -182,8 +182,8 @@ class PaymentController extends PaymentController_parent
     {
         //PayPalPlus and PayPal specific block
         if ( \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter( static::PARAM_PAYPAL_PLUS_PAYMENT_IS_ACTIVE ) ) {
-            /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-            $oPayPalPaymentHandler = \OxidEsales\PaypalPlus\Core\Shop::getShop()->getFromRegistry( \OxidEsales\PayPalPlus\Core\PaymentHandler::class );
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+            $oPayPalPaymentHandler = \OxidEsales\PaypalPlus\Core\Shop::getShop()->getFromRegistry( \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class );
             $oPayPalPaymentHandler->validateUserData();
         }
         return $this;
@@ -243,8 +243,8 @@ class PaymentController extends PaymentController_parent
     {
         $oShop = $this->getShop();
 
-        /** @var \OxidEsales\PayPalPlus\Model\UserData $oUserData */
-        $oUserData = $oShop->getNew(\OxidEsales\PayPalPlus\Model\UserData::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Model\UserData $oUserData */
+        $oUserData = $oShop->getNew(\OxidProfessionalServices\PayPalPlus\Model\UserData::class);
 
         if ($oUserData->getShippingAddressValueCountryCode() === 'US' and !$oUserData->getShippingAddressValueState()) {
             $oShop->getErrorHandler()->setDataValidationNotice();
@@ -301,8 +301,8 @@ class PaymentController extends PaymentController_parent
 
         $sInvoiceNumber = $this->_getInvoiceNumber($oPayPalSession);
 
-        /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-        $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaymentHandler::class);
+        /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+        $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class);
         $oPayPalPaymentHandler->setInvoiceNumber($sInvoiceNumber);
         $oPayPalPaymentHandler->init();
         $oPayPalPaymentHandler->create($oPayPalSession->getApiContext());
@@ -349,7 +349,7 @@ class PaymentController extends PaymentController_parent
          *
          * We retrieve the value from the SESSION and not from the Request parameter as the session is what counts later on.
          *
-         * @see \OxidEsales\PayPalPlus\Model\Basket::getTsProductId
+         * @see \OxidProfessionalServices\PayPalPlus\Model\Basket::getTsProductId
          *
          * @var  $blTsProtection
          */
@@ -382,8 +382,8 @@ class PaymentController extends PaymentController_parent
 
             $sInvoiceNumber = $this->_getInvoiceNumber($oPayPalSession);
 
-            /** @var \OxidEsales\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidEsales\PayPalPlus\Core\PaymentHandler::class);
+            /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
+            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class);
             $oPayPalPaymentHandler->setPayment($oPayment);
             $oPayPalPaymentHandler->setInvoiceNumber($sInvoiceNumber);
             $oPayPalPaymentHandler->update($oPayPalSession->getApiContext());

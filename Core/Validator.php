@@ -19,13 +19,13 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\Validator.
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Validator.
  * Provides a set of methods to check module status, basket and user states, PayPal API state.
  */
-class Validator extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class Validator extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Check if PayPal payment instance could be created.

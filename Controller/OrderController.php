@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller;
+namespace OxidProfessionalServices\PayPalPlus\Controller;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\OrderController.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\OrderController.
  * Overloads Order controller.
  *
  * @see \OxidEsales\Eshop\Application\Controller\OrderController
@@ -38,7 +38,7 @@ class OrderController extends OrderController_parent
      */
     public function init()
     {
-        $oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
         $oPayPalConfig = $oShop->getPayPalPlusConfig();
 
         // Set payment if it was requested
@@ -67,7 +67,7 @@ class OrderController extends OrderController_parent
      */
     protected function _setPayment()
     {
-        $oShop = \OxidEsales\PayPalPlus\Core\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
 
         $sPaymentId = (string) $oShop->getRequestParameter($oShop->getPayPalPlusConfig()->getForcedPaymentParameter());
 

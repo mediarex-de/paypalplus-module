@@ -19,25 +19,25 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Model;
+namespace OxidProfessionalServices\PayPalPlus\Model;
 
 /**
- * Class \OxidEsales\PayPalPlus\Model\DataProvider.
+ * Class \OxidProfessionalServices\PayPalPlus\Model\DataProvider.
  * Abstract data provider class.
  */
-abstract class DataProvider extends \OxidEsales\PayPalPlus\Core\SuperCfg
+abstract class DataProvider extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * Data access utils instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\DataAccess
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\DataAccess
      */
     protected $_oDataAccess = null;
 
     /**
      * Data converter instance.
      *
-     * @var null|\OxidEsales\PayPalPlus\Core\DataConverter
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     protected $_oConverter = null;
 
@@ -119,7 +119,7 @@ abstract class DataProvider extends \OxidEsales\PayPalPlus\Core\SuperCfg
     /**
      * Get data access utils instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataAccess
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataAccess
      */
     public function getDataUtils()
     {
@@ -133,7 +133,7 @@ abstract class DataProvider extends \OxidEsales\PayPalPlus\Core\SuperCfg
     /**
      * Get data converter instance.
      *
-     * @return \OxidEsales\PayPalPlus\Core\DataConverter
+     * @return \OxidProfessionalServices\PayPalPlus\Core\DataConverter
      */
     public function getConverter()
     {

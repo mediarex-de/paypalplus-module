@@ -60,7 +60,7 @@ class paypPayPalPlusModuleTest extends OxidTestCase
         $oEvent->expects($this->once())->method('activate');
         $oEvent->expects($this->never())->method('deactivate');
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class, $oEvent);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents::class, $oEvent);
 
         $this->SUT->onActivate();
     }
@@ -72,7 +72,7 @@ class paypPayPalPlusModuleTest extends OxidTestCase
         $oEvent->expects($this->never())->method('activate');
         $oEvent->expects($this->once())->method('deactivate');
 
-        \OxidEsales\Eshop\Core\Registry::set(\OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class, $oEvent);
+        \OxidEsales\Eshop\Core\Registry::set(\OxidProfessionalServices\PayPalPlus\Core\PaypalPlusEvents::class, $oEvent);
 
         $this->SUT->onDeactivate();
     }

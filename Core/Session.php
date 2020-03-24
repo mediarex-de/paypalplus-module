@@ -19,16 +19,16 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Core;
+namespace OxidProfessionalServices\PayPalPlus\Core;
 
 // Load SDK
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 /**
- * Class \OxidEsales\PayPalPlus\Core\Session
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Session
  * PayPal credentials token, API context and payment data session handler.
  */
-class Session extends \OxidEsales\PayPalPlus\Core\SuperCfg
+class Session extends \OxidProfessionalServices\PayPalPlus\Core\SuperCfg
 {
     /**
      * A session key for basket hash storage

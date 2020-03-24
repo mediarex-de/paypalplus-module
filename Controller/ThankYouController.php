@@ -19,10 +19,10 @@
  * @copyright (C) PayPal (Europe) S.à r.l. et Cie, S.C.A. 2015
  */
 
-namespace OxidEsales\PayPalPlus\Controller;
+namespace OxidProfessionalServices\PayPalPlus\Controller;
 
 /**
- * Class \OxidEsales\PayPalPlus\Controller\ThankYouController.
+ * Class \OxidProfessionalServices\PayPalPlus\Controller\ThankYouController.
  * Overloads Thankyou controller.
  *
  * @see \OxidEsales\Eshop\Application\Controller\ThankYouController
@@ -32,7 +32,7 @@ class ThankYouController extends ThankYouController_parent
     /**
      * Payment Instructions to be displayed in the template in case the payment was made with PayPal upon Invoice.
      *
-     * @var \OxidEsales\PayPalPlus\Model\PuiData
+     * @var \OxidProfessionalServices\PayPalPlus\Model\PuiData
      */
     protected $_oPaymentInstructions;
 
@@ -72,7 +72,7 @@ class ThankYouController extends ThankYouController_parent
      */
     public function init()
     {
-        $this->setShop(\OxidEsales\PayPalPlus\Core\Shop::getShop());
+        $this->setShop(\OxidProfessionalServices\PayPalPlus\Core\Shop::getShop());
 
         $this->_paypPayPalPlusPayment_init_parent();
     }
@@ -95,7 +95,7 @@ class ThankYouController extends ThankYouController_parent
      * Template getter.
      * Get the payment instructions to be displayed in the thankyou page.
      *
-     * @return \OxidEsales\PayPalPlus\Model\PuiData
+     * @return \OxidProfessionalServices\PayPalPlus\Model\PuiData
      */
     public function getPaymentInstructions()
     {
@@ -125,7 +125,7 @@ class ThankYouController extends ThankYouController_parent
     {
         $sDate = '';
 
-        if ($this->_oPaymentInstructions instanceof \OxidEsales\PayPalPlus\Model\PuiData) {
+        if ($this->_oPaymentInstructions instanceof \OxidProfessionalServices\PayPalPlus\Model\PuiData) {
             $sDateFormatString = $this->_getDateFormatString();
             $date = DateTime::createFromFormat('Y-m-d H:i:s', $this->_oPaymentInstructions->getDueDate());
 
@@ -145,7 +145,7 @@ class ThankYouController extends ThankYouController_parent
     {
         $sAmount = $sDueDate = '';
 
-        if ($this->_oPaymentInstructions instanceof \OxidEsales\PayPalPlus\Model\PuiData) {
+        if ($this->_oPaymentInstructions instanceof \OxidProfessionalServices\PayPalPlus\Model\PuiData) {
             $sDueDate = $this->getDueDate();
             $sAmount = $this->getTotalPrice() . ' ' . $this->_oPaymentInstructions->getCurrency();
         }
@@ -172,7 +172,7 @@ class ThankYouController extends ThankYouController_parent
      */
     protected function _getDateFormatString()
     {
-        $oConfig = oxNew(\OxidEsales\PayPalPlus\Core\Config::class);
+        $oConfig = oxNew(\OxidProfessionalServices\PayPalPlus\Core\Config::class);
 
         return $oConfig->getShop()->translate('PAYP_PAYPALPLUS_PUI_SUCCESS_DATE_FORMAT');
     }
