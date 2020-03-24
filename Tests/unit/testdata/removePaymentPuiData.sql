@@ -1,0 +1,1 @@
+DELETE FROM `payppaypalpluspui` WHERE `OXID` = 'testPuiOXID';

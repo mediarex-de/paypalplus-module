@@ -22,472 +22,480 @@
 /**
  * Metadata version
  */
-$sMetadataVersion = '1.1';
+$sMetadataVersion = '2.0';
 
 /**
  * Module information
  */
-$aModule = array(
+$aModule = [
     'id'          => 'payppaypalplus',
     'title'       => 'PayPal Plus',
-    'description' => array(
-        'de' => 'PayPal Plus Bezahlmodul für OXID eShop',
-        'en' => 'PayPal Plus payments module for OXID eShop',
-    ),
+    'description' => [
+        'de'      => 'PayPal Plus Bezahlmodul für OXID eShop',
+        'en'      => 'PayPal Plus payments module for OXID eShop',
+    ],
     'thumbnail'   => 'out/pictures/payppaypalplus.png',
-    'version'     => '3.0.3',
+    'version'     => '4.0.0',
     'author'      => 'PayPal (Europe) S.à r.l. et Cie, S.C.A.',
     'url'         => 'https://www.paypal.com',
     'email'       => 'service@paypal.com',
-    'extend'      => array(
-        'language_main'    => 'payp/paypalplus/controllers/admin/admin_payppaypalpluslanguage_main',
-        'order_list'       => 'payp/paypalplus/controllers/admin/admin_payppaypalplusorder_list',
-        'module_config'    => 'payp/paypalplus/controllers/admin/admin_payppaypalplusmodule_config',
-        'basket'           => 'payp/paypalplus/controllers/payppaypalplusbasket',
-        'order'            => 'payp/paypalplus/controllers/payppaypalplusorder',
-        'payment'          => 'payp/paypalplus/controllers/payppaypalpluspayment',
-        'oxviewconfig'     => 'payp/paypalplus/core/payppaypalplusoxviewconfig',
-        'oxaddress'        => 'payp/paypalplus/models/payppaypalplusoxaddress',
-        'oxbasket'         => 'payp/paypalplus/models/payppaypalplusoxbasket',
-        'oxorder'          => 'payp/paypalplus/models/payppaypalplusoxorder',
-        'oxpaymentgateway' => 'payp/paypalplus/models/payppaypalplusoxpaymentgateway',
-        'oxuser'           => 'payp/paypalplus/models/payppaypalplusoxuser',
-        'thankyou'         => 'payp/paypalplus/controllers/payppaypalplusthankyou',
-    ),
-    'files'       => array(
-        'payppaypalpluswall'                                 => 'payp/paypalplus/components/widgets/payppaypalpluswall.php',
-        'admin_payppaypalplusordertab'                       => 'payp/paypalplus/controllers/admin/admin_payppaypalplusordertab.php',
-        'payppaypalplusnoorderexception'                     => 'payp/paypalplus/core/exception/payppaypalplusnoorderexception.php',
-        'payppaypalplusnopaymentfoundexception'              => 'payp/paypalplus/core/exception/payppaypalplusnopaymentfoundexception.php',
-        'payppaypalplusrefundexception'                      => 'payp/paypalplus/core/exception/payppaypalplusrefundexception.php',
-        'payppaypalplusconfig'                               => 'payp/paypalplus/core/payppaypalplusconfig.php',
-        'payppaypalplusdataaccess'                           => 'payp/paypalplus/core/payppaypalplusdataaccess.php',
-        'payppaypalplusdataconverter'                        => 'payp/paypalplus/core/payppaypalplusdataconverter.php',
-        'payppaypalpluserrorhandler'                         => 'payp/paypalplus/core/payppaypalpluserrorhandler.php',
-        'payppaypalplusevents'                               => 'payp/paypalplus/core/payppaypalplusevents.php',
-        'payppaypalplusinvoicepdfarticlesummary'             => 'payp/paypalplus/core/payppaypalplusinvoicepdfarticlesummary.php',
-        'payppaypalpluspdfarticlesummarypaymentinstructions' => 'payp/paypalplus/core/payppaypalpluspdfarticlesummarypaymentinstructions.php',
-        'payppaypalplusmodule'                               => 'payp/paypalplus/core/payppaypalplusmodule.php',
-        'payppaypalpluspaymenthandler'                       => 'payp/paypalplus/core/payppaypalpluspaymenthandler.php',
-        'payppaypalpluspdfarticlesummary'                    => 'payp/paypalplus/core/payppaypalpluspdfarticlesummary.php',
-        'payppaypalplusrefundhandler'                        => 'payp/paypalplus/core/payppaypalplusrefundhandler.php',
-        'payppaypalpluswebprofilehandler'                    => 'payp/paypalplus/core/payppaypalpluswebprofilehandler.php',
-        'payppaypalplussdk'                                  => 'payp/paypalplus/core/payppaypalplussdk.php',
-        'payppaypalplussession'                              => 'payp/paypalplus/core/payppaypalplussession.php',
-        'payppaypalplusshop'                                 => 'payp/paypalplus/core/payppaypalplusshop.php',
-        'payppaypalplussupercfg'                             => 'payp/paypalplus/core/payppaypalplussupercfg.php',
-        'payppaypalplustaxationhandler'                      => 'payp/paypalplus/core/payppaypalplustaxationhandler.php',
-        'payppaypalplusvalidator'                            => 'payp/paypalplus/core/payppaypalplusvalidator.php',
-        'payppaypalplusbasketdata'                           => 'payp/paypalplus/models/payppaypalplusbasketdata.php',
-        'payppaypalplusbasketitemdata'                       => 'payp/paypalplus/models/payppaypalplusbasketitemdata.php',
-        'payppaypalplusdataprovider'                         => 'payp/paypalplus/models/payppaypalplusdataprovider.php',
-        'payppaypalpluspaymentdata'                          => 'payp/paypalplus/models/payppaypalpluspaymentdata.php',
-        'payppaypalpluspaymentdataprovider'                  => 'payp/paypalplus/models/payppaypalpluspaymentdataprovider.php',
-        'payppaypalplusprofile'                              => 'payp/paypalplus/models/payppaypalplusprofile.php',
-        'payppaypalpluspuidata'                              => 'payp/paypalplus/models/payppaypalpluspuidata.php',
-        'payppaypalpluspuidataprovider'                      => 'payp/paypalplus/models/payppaypalpluspuidataprovider.php',
-        'payppaypalplusrefunddata'                           => 'payp/paypalplus/models/payppaypalplusrefunddata.php',
-        'payppaypalplusrefunddatalist'                       => 'payp/paypalplus/models/payppaypalplusrefunddatalist.php',
-        'payppaypalplusrefunddataprovider'                   => 'payp/paypalplus/models/payppaypalplusrefunddataprovider.php',
-        'payppaypalplususerdata'                             => 'payp/paypalplus/models/payppaypalplususerdata.php',
-        'payppaypalpluswebhook'                              => 'payp/paypalplus/controllers/payppaypalpluswebhook.php',
-    ),
-    'templates'   => array(
+    'extend'      => [
+
+        // Controller
+        \OxidEsales\Eshop\Application\Controller\Admin\LanguageMain::class          => \OxidEsales\PayPalPlus\Controller\Admin\LanguageMain::class,
+        \OxidEsales\Eshop\Application\Controller\Admin\OrderList::class             => \OxidEsales\PayPalPlus\Controller\Admin\OrderList::class,
+        \OxidEsales\Eshop\Application\Controller\Admin\ModuleConfiguration::class   => \OxidEsales\PayPalPlus\Controller\Admin\ModuleConfiguration::class,
+        \OxidEsales\Eshop\Application\Controller\BasketController::class            => \OxidEsales\PayPalPlus\Controller\BasketController::class,
+        \OxidEsales\Eshop\Application\Controller\OrderController::class             => \OxidEsales\PayPalPlus\Controller\OrderController::class,
+        \OxidEsales\Eshop\Application\Controller\PaymentController::class           => \OxidEsales\PayPalPlus\Controller\PaymentController::class,
+        \OxidEsales\Eshop\Application\Controller\ThankYouController::class          => \OxidEsales\PayPalPlus\Controller\ThankYouController::class,
+
+        // Core
+        \OxidEsales\Eshop\Core\ViewConfig::class                                    => \OxidEsales\PayPalPlus\Core\ViewConfig::class,
+
+        // Model
+        \OxidEsales\Eshop\Application\Model\Address::class                          => \OxidEsales\PayPalPlus\Model\Address::class,
+        \OxidEsales\Eshop\Application\Model\Basket::class                           => \OxidEsales\PayPalPlus\Model\Basket::class,
+        \OxidEsales\Eshop\Application\Model\Order::class                            => \OxidEsales\PayPalPlus\Model\Order::class,
+        \OxidEsales\Eshop\Application\Model\PaymentGateway::class                   => \OxidEsales\PayPalPlus\Model\PaymentGateway::class,
+        \OxidEsales\Eshop\Application\Model\User::class                             => \OxidEsales\PayPalPlus\Model\User::class,
+    ],
+    'controllers'       => [
+
+        // Component
+        'payppaypalpluswall'                                                => \OxidEsales\PayPalPlus\Component\Widget\WallWidget::class,
+
+        // Controller
+        'admin_payppaypalplusordertab'                                      => \OxidEsales\PayPalPlus\Controller\Admin\OrderTab::class,
+        'payppaypalpluswebhook'                                             => \OxidEsales\PayPalPlus\Controller\Webhook::class,
+
+        // Core
+        'payppaypalplusnoorderexception'                                    => \OxidEsales\PayPalPlus\Core\Exception\NoOrderException::class,
+        'payppaypalplusnopaymentfoundexception'                             => \OxidEsales\PayPalPlus\Core\Exception\NoPaymentFoundException::class,
+        'payppaypalpluspaymentdatasaveexception'                            => \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException::class,
+        'payppaypalplusrefundexception'                                     => \OxidEsales\PayPalPlus\Core\Exception\RefundException::class,
+        'payppaypalplusconfig'                                              => \OxidEsales\PayPalPlus\Core\Config::class,
+        'payppaypalplusdataaccess'                                          => \OxidEsales\PayPalPlus\Core\DataAccess::class,
+        'payppaypalplusdataconverter'                                       => \OxidEsales\PayPalPlus\Core\DataConverter::class,
+        'payppaypalpluserrorhandler'                                        => \OxidEsales\PayPalPlus\Core\ErrorHandler::class,
+        'payppaypalplusevents'                                              => \OxidEsales\PayPalPlus\Core\PaypalPlusEvents::class,
+        'payppaypalplusinvoicepdfarticlesummary'                            => \OxidEsales\PayPalPlus\Core\InvoicePdfArticleSummary::class,
+        'payppaypalpluspdfarticlesummarypaymentinstructions'                => \OxidEsales\PayPalPlus\Core\PdfArticleSummaryPaymentInstructions::class,
+        'payppaypalpluspaymenthandler'                                      => \OxidEsales\PayPalPlus\Core\PaymentHandler::class,
+        'payppaypalpluspdfarticlesummary'                                   => \OxidEsales\PayPalPlus\Core\PdfArticleSummary::class,
+        'payppaypalplusrefundhandler'                                       => \OxidEsales\PayPalPlus\Core\RefundHandler::class,
+        'payppaypalpluswebprofilehandler'                                   => \OxidEsales\PayPalPlus\Core\WebProfileHandler::class,
+        'payppaypalplussdk'                                                 => \OxidEsales\PayPalPlus\Core\Sdk::class,
+        'payppaypalplussession'                                             => \OxidEsales\PayPalPlus\Core\Session::class,
+        'payppaypalplusshop'                                                => \OxidEsales\PayPalPlus\Core\Shop::class,
+        'payppaypalplussupercfg'                                            => \OxidEsales\PayPalPlus\Core\SuperCfg::class,
+        'payppaypalplustaxationhandler'                                     => \OxidEsales\PayPalPlus\Core\TaxationHandler::class,
+        'payppaypalplusvalidator'                                           => \OxidEsales\PayPalPlus\Core\Validator::class,
+
+        // Model
+        'payppaypalplusbasketdata'                                          => \OxidEsales\PayPalPlus\Model\BasketData::class,
+        'payppaypalplusbasketitemdata'                                      => \OxidEsales\PayPalPlus\Model\BasketItemData::class,
+        'payppaypalplusdataprovider'                                        => \OxidEsales\PayPalPlus\Model\DataProvider::class,
+        'payppaypalpluspaymentdata'                                         => \OxidEsales\PayPalPlus\Model\PaymentData::class,
+        'payppaypalpluspaymentdataprovider'                                 => \OxidEsales\PayPalPlus\Model\PaymentDataProvider::class,
+        'payppaypalplusprofile'                                             => \OxidEsales\PayPalPlus\Model\Profile::class,
+        'payppaypalpluspuidata'                                             => \OxidEsales\PayPalPlus\Model\PuiData::class,
+        'payppaypalpluspuidataprovider'                                     => \OxidEsales\PayPalPlus\Model\PuiDataProvider::class,
+        'payppaypalplusrefunddata'                                          => \OxidEsales\PayPalPlus\Model\RefundData::class,
+        'payppaypalplusrefunddatalist'                                      => \OxidEsales\PayPalPlus\Model\RefundDataList::class,
+        'payppaypalplusrefunddataprovider'                                  => \OxidEsales\PayPalPlus\Model\RefundDataProvider::class,
+        'payppaypalplususerdata'                                            => \OxidEsales\PayPalPlus\Model\UserData::class
+    ],
+    'templates'   => [
         'payppaypalpluswall.tpl'  => 'payp/paypalplus/views/widgets/payppaypalpluswall.tpl',
         'payppaypalplusorder.tpl' => 'payp/paypalplus/views/admin/tpl/payppaypalplusorder.tpl',
-        'page/webhook/response.tpl' => 'payp/paypalplus/views/tpl/page/webhook/response.tpl',
-    ),
-    'blocks'      => array(
-        array(
+        'page/webhook/response.tpl' => 'payp/paypalplus/views/tpl/page/webhook/response.tpl'
+    ],
+    'blocks'      => [
+        [
             'template' => 'page/checkout/inc/payment_other.tpl',
             'block'    => 'checkout_payment_longdesc',
-            'file'     => 'views/blocks/payppaypalplus_payment_description.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_payment_description.tpl'],
+        [
             'template' => 'page/checkout/thankyou.tpl',
             'block'    => 'checkout_thankyou_info',
-            'file'     => 'views/blocks/payppaypalplus_checkout_thankyou_info.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_checkout_thankyou_info.tpl'],
+        [
             'template' => 'page/checkout/order.tpl',
             'block'    => 'shippingAndPayment',
-            'file'     => 'views/blocks/payppaypalplus_order_payment.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_order_payment.tpl'],
+        [
             'template' => 'email/html/order_cust.tpl',
             'block'    => 'email_html_order_cust_orderemailend',
-            'file'     => 'views/blocks/payppaypalplus_email_html_order_cust_orderemailend.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_email_html_order_cust_orderemailend.tpl'],
+        [
             'template' => 'email/plain/order_cust.tpl',
             'block'    => 'email_plain_order_cust_orderemailend',
-            'file'     => 'views/blocks/payppaypalplus_email_plain_order_cust_orderemailend.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_email_plain_order_cust_orderemailend.tpl'],
+        [
             'template' => 'language_main.tpl',
             'block'    => 'admin_language_main_form',
-            'file'     => 'views/blocks/payppaypalplus_admin_language_main_form.tpl',
-        ),
-        array(
+            'file'     => 'views/blocks/payppaypalplus_admin_language_main_form.tpl'],
+        [
             'template' => 'order_list.tpl',
             'block'    => 'admin_order_list_filter',
-            'file'     => '/views/blocks/payppaypalplus_admin_order_list_filter_actions.tpl'),
-        array(
+            'file'     => '/views/blocks/payppaypalplus_admin_order_list_filter_actions.tpl'],
+        [
             'template' => 'order_list.tpl',
             'block'    => 'admin_order_list_sorting',
-            'file'     => '/views/blocks/payppaypalplus_admin_order_list_sorting_actions.tpl'),
-        array(
+            'file'     => '/views/blocks/payppaypalplus_admin_order_list_sorting_actions.tpl'],
+        [
             'template' => 'order_list.tpl',
             'block'    => 'admin_order_list_item',
-            'file'     => '/views/blocks/payppaypalplus_admin_order_list_items_actions.tpl'),
-        array(
+            'file'     => '/views/blocks/payppaypalplus_admin_order_list_items_actions.tpl'],
+        [
             'template' => 'order_list.tpl',
             'block'    => 'admin_order_list_colgroup',
-            'file'     => '/views/blocks/payppaypalplus_admin_order_list_colgroup_actions.tpl'),
-        array(
+            'file'     => '/views/blocks/payppaypalplus_admin_order_list_colgroup_actions.tpl'],
+        [
             'template' => 'module_config.tpl',
             'block'    => 'admin_module_config_form',
-            'file'     => '/views/blocks/paypalplus_admin_module_config_form.tpl'),
-    ),
-    'settings'    => array(
-        array(
+            'file'     => '/views/blocks/paypalplus_admin_module_config_form.tpl']
+    ],
+    'settings'    => [
+        [
             'group' => 'paypPayPalPlusApi',
             'name'  => 'paypPayPalPlusClientId',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusApi',
             'name'  => 'paypPayPalPlusSecret',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusSandbox',
             'name'  => 'paypPayPalPlusSandbox',
             'type'  => 'bool',
-            'value' => false,
-        ),
-        array(
+            'value' => false
+        ],
+        [
             'group' => 'paypPayPalPlusSandbox',
             'name'  => 'paypPayPalPlusSandboxClientId',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusSandbox',
             'name'  => 'paypPayPalPlusSandboxSecret',
             'type'  => 'str',
-            'value' => '',
-        ),
+            'value' => ''
+        ],
 
         /** Common integration settings **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusIntegration',
             'name'  => 'paypPayPalPlusExternalMethods',
             'type'  => 'arr',
-            'value' => array('oxidinvoice', 'oxidpayadvance', 'oxidcashondel', 'oxempty'),
-        ),
-        array(
+            'value' => array('oxidinvoice', 'oxidpayadvance', 'oxidcashondel', 'oxempty')
+        ],
+        [
             'group' => 'paypPayPalPlusIntegration',
             'name'  => 'paypPayPalPlusValidateTemplate',
             'type'  => 'bool',
-            'value' => true,
-        ),
+            'value' => true
+        ],
 
         /** Settings for template integration **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusNextButtonId',
             'type'  => 'str',
-            'value' => 'paymentNextStepBottom',
-        ),
-        array(
+            'value' => 'paymentNextStepBottom'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusNextLink',
             'type'  => 'str',
-            'value' => 'a#orderStep',
-        ),
-        array(
+            'value' => 'a#orderStep'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusNextLinkParent',
             'type'  => 'str',
-            'value' => 'span',
-        ),
-        array(
+            'value' => 'span'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusPaymentRadio',
             'type'  => 'str',
-            'value' => 'input[name="paymentid"]',
-        ),
-        array(
+            'value' => 'input[name="paymentid"]'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusListItem',
             'type'  => 'str',
-            'value' => 'dl',
-        ),
-        array(
+            'value' => 'dl'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusListItemTitle',
             'type'  => 'str',
-            'value' => 'dt',
-        ),
-        array(
+            'value' => 'dt'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusLabelFormat',
             'type'  => 'str',
-            'value' => 'label[for="payment_%s"]',
-        ),
-        array(
+            'value' => 'label[for="payment_%s"]'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusLabelChild',
             'type'  => 'str',
-            'value' => 'b',
-        ),
-        array(
+            'value' => 'b'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusDescription',
             'type'  => 'str',
-            'value' => 'div.desc',
-        ),
-        array(
+            'value' => 'div.desc'
+        ],
+        [
             'group' => 'paypPayPalPlusTemplateIntegration',
             'name'  => 'paypPayPalPlusMethodIdPrefix',
             'type'  => 'str',
-            'value' => 'payment_',
-        ),
+            'value' => 'payment_'
+        ],
 
         /** Settings for Mobile template integration **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobNextButtonId',
             'type'  => 'str',
-            'value' => 'paymentNextStepBottom',
-        ),
-        array(
+            'value' => 'paymentNextStepBottom'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobNextLink',
             'type'  => 'str',
-            'value' => 'a#orderStep',
-        ),
-        array(
+            'value' => 'a#orderStep'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobNextLinkParent',
             'type'  => 'str',
-            'value' => 'li',
-        ),
-        array(
+            'value' => 'li'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobPaymentRadio',
             'type'  => 'str',
-            'value' => 'input[name="paymentid"]',
-        ),
-        array(
+            'value' => 'input[name="paymentid"]'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobListItem',
             'type'  => 'str',
-            'value' => '#paymentMethods ul.dropdown-menu li',
-        ),
-        array(
+            'value' => '#paymentMethods ul.dropdown-menu li'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobListItemTitle',
             'type'  => 'str',
-            'value' => 'a',
-        ),
-        array(
+            'value' => 'a'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobLabelFormat',
             'type'  => 'str',
-            'value' => 'a[data-selection-id="%s"]',
-        ),
-        array(
+            'value' => 'a[data-selection-id="%s"]'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobDescription',
             'type'  => 'str',
-            'value' => 'div[id="paymentOption_%s"] div.payment-desc',
-        ),
-        array(
+            'value' => 'div[id="paymentOption_%s"] div.payment-desc'
+        ],
+        [
             'group' => 'paypPayPalPlusMobIntegration',
             'name'  => 'paypPayPalPlusMobMethodIdPrefix',
             'type'  => 'str',
-            'value' => 'payment_',
-        ),
+            'value' => 'payment_'
+        ],
 
         /** Settings for Flow template integration **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowNextButtonId',
             'type'  => 'str',
-            'value' => 'paymentNextStepBottom',
-        ),
-        array(
+            'value' => 'paymentNextStepBottom'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowNextLink',
             'type'  => 'str',
-            'value' => 'a#orderStep',
-        ),
-        array(
+            'value' => 'a#orderStep'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowNextLinkParent',
             'type'  => 'str',
-            'value' => 'li',
-        ),
-        array(
+            'value' => 'li'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowPaymentRadio',
             'type'  => 'str',
-            'value' => 'input[name="paymentid"]',
-        ),
-        array(
+            'value' => 'input[name="paymentid"]'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowListItem',
             'type'  => 'str',
-            'value' => '.panel-body .well',
-        ),
-        array(
+            'value' => '.panel-body .well'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowListItemTitle',
             'type'  => 'str',
-            'value' => 'dt',
-        ),
-        array(
+            'value' => 'dt'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowLabelFormat',
             'type'  => 'str',
-            'value' => 'label[for="payment_%s"]',
-        ),
-        array(
+            'value' => 'label[for="payment_%s"]'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowDescription',
             'type'  => 'str',
-            'value' => 'div.desc',
-        ),
-        array(
+            'value' => 'div.desc'
+        ],
+        [
             'group' => 'paypPayPalPlusFlowIntegration',
             'name'  => 'paypPayPalPlusFlowMethodIdPrefix',
             'type'  => 'str',
-            'value' => 'payment_',
-        ),
+            'value' => 'payment_'
+        ],
 
         /** Logging debugging and connectivity **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusLogEnabled',
             'type'  => 'bool',
-            'value' => true,
-        ),
-        array(
+            'value' => true
+        ],
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusLogFile',
             'type'  => 'str',
-            'value' => 'paypalplus.log',
-        ),
-        array(
+            'value' => 'paypalplus.log'
+        ],
+        [
             'group'      => 'paypPayPalPlusOther',
             'name'       => 'paypPayPalPlusLogLevel',
             'type'       => 'select',
             'constrains' => 'DEBUG|INFO|WARN|ERROR',
-            'value'      => 'INFO',
-        ),
-        array(
+            'value'      => 'INFO'
+        ],
+        [
             'group'      => 'paypPayPalPlusOther',
             'name'       => 'paypPayPalPlusValidation',
             'type'       => 'select',
             'constrains' => 'log|strict|disabled',
-            'value'      => 'log',
-        ),
-        array(
+            'value'      => 'log'
+        ],
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusTimeout',
             'type'  => 'num',
-            'value' => 60,
-        ),
-        array(
+            'value' => 60
+        ],
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusRetry',
             'type'  => 'num',
-            'value' => 1,
-        ),
-        array(
+            'value' => 1
+        ],
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusDebug',
             'type'  => 'bool',
-            'value' => false,
-        ),
-        array(
+            'value' => false
+        ],
+        [
             'group' => 'paypPayPalPlusOther',
             'name'  => 'paypPayPalPlusSaveToFile',
             'type'  => 'bool',
-            'value' => false,
-        ),
+            'value' => false
+        ],
 
         /** Other settings **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusPUI',
             'name'  => 'paypPayPalPlusDiscountRefunds',
             'type'  => 'bool',
-            'value' => true,
-        ),
-        array(
+            'value' => true
+        ],
+        [
             'group' => 'paypPayPalPlusPUI',
             'name'  => 'paypPayPalPlusRefundOnInvoice',
             'type'  => 'bool',
-            'value' => false,
-        ),
-        array(
+            'value' => false
+        ],
+        [
             'group' => 'paypPayPalPlusPUI',
             'name'  => 'paypPayPalPlusShopOwnerStr',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusPUI',
             'name'  => 'paypPayPalPlusInvNr',
             'type'  => 'bool',
-            'value' => false,
-        ),
+            'value' => false
+        ],
 
         /** Paypal Payment Experience settings **/
 
-        array(
+        [
             'group' => 'paypPayPalPlusExperience',
             'name'  => 'paypPayPalPlusExpProfileId',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusExperience',
             'name'  => 'paypPayPalPlusExpName',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusExperience',
             'name'  => 'paypPayPalPlusExpBrand',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusExperience',
             'name'  => 'paypPayPalPlusExpLogo',
             'type'  => 'str',
-            'value' => '',
-        ),
-        array(
+            'value' => ''
+        ],
+        [
             'group' => 'paypPayPalPlusExperience',
             'name'  => 'paypPayPalPlusExpLocale',
             'type'  => 'str',
-            'value' => '',
-        ),
-    ),
-    'events'      => array(
-        'onActivate'   => 'paypPayPalPlusModule::onActivate',
-        'onDeactivate' => 'paypPayPalPlusModule::onDeactivate',
-    ),
-);
+            'value' => ''
+        ]
+    ],
+    'events'      => [
+        'onActivate'   => '\OxidEsales\PayPalPlus\Core\Events::onActivate',
+        'onDeactivate' => '\OxidEsales\PayPalPlus\Core\Events::onDeactivate'
+    ]
+];

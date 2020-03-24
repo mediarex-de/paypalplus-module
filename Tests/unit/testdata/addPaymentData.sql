@@ -1,0 +1,2 @@
+INSERT INTO `payppaypalpluspayment` (`OXID`, `OXORDERID`, `OXSALEID`, `OXPAYMENTOBJECT`, `OXDATECREATED`, `OXPAYMENTID`, `OXSTATUS`, `OXTOTAL`, `OXCURRENCY`)
+VALUES ('testPaymentOXID', 'testPaymentOrderId', 'testPaymentSaleId', '', '2011-11-11 11:11:11', 'testPaymentId', 'pending', 999.99, 'LTU');

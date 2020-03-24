@@ -1,0 +1,1 @@
+DELETE FROM `oxorder` WHERE `oxorder`.`oxid` = 'testPaymentOrderId';
