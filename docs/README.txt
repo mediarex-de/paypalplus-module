@@ -11,7 +11,7 @@ payp
 6.0.x
 
 ==Version==
-3.0.x
+4.0.0
 
 ==Link==
 https://www.paypal.com

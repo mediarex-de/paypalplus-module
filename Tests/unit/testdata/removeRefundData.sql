@@ -1,0 +1,1 @@
+DELETE FROM `payppaypalplusrefund` WHERE `OXID` IN ('testRefundOXID1', 'testRefundOXID2', 'testRefundOXID3');

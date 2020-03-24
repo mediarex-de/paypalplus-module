@@ -1,0 +1,1 @@
+DELETE FROM `payppaypalpluspayment` WHERE `OXID` = 'testPaymentOXID';

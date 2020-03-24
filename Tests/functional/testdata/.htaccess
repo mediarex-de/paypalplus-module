@@ -1,0 +1,4 @@
+<FilesMatch "addTestData.php|removeTestData.php">
+    order allow,deny
+    deny from all
+</FilesMatch>
