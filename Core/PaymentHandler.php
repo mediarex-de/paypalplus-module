@@ -25,7 +25,7 @@ namespace OxidProfessionalServices\PayPalPlus\Core;
  * Class \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler.
  * PayPal Plus Payment instance handler: create payment object, fill it with data, execute payment, etc.
  */
-class PaymentHandler extends \OxidEsales\PaypalPlus\Core\SuperCfg
+class PaymentHandler extends \OxidProfessionalServices\PayPalPlusCore\SuperCfg
 {
     /**
      * A name of checkout payment selection step controller.

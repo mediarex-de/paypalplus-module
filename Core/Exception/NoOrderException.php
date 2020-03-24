@@ -22,7 +22,7 @@
 namespace OxidEsales\PaypalPlus\Core\Exception;
 
 /**
- * Class \OxidEsales\PaypalPlus\Core\Exception\NoOrderException
+ * Class \OxidProfessionalServices\PayPalPlusCore\Exception\NoOrderException
  *
  * Thrown if there is no order associated to a PayPal Payment
  */

@@ -34,7 +34,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PaypalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlusCore\Shop
 */
     protected $_oShop = null;
 
@@ -189,7 +189,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
      */
     protected function _init()
     {
-        /** @var \OxidEsales\PaypalPlus\Core\Shop $oShop */
+        /** @var \OxidProfessionalServices\PayPalPlusCore\Shop $oShop */
         $oShop = $this->_getShop();
         $aConfVars = $oShop->getConfig()->getRequestParameter('confstrs');
         $this->_moduleSettingsPrefix = $oShop->getPayPalPlusConfig()->getModuleSettingsPrefix();
@@ -223,7 +223,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PaypalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlusCore\Shop
      */
     protected function _getShop()
     {

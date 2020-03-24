@@ -37,7 +37,7 @@ class PaymentController extends PaymentController_parent
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidEsales\PaypalPlus\Core\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlusCore\Shop
      */
     protected $_oShop = null;
 
@@ -59,12 +59,12 @@ class PaymentController extends PaymentController_parent
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidEsales\PaypalPlus\Core\Shop
+     * @return \OxidProfessionalServices\PayPalPlusCore\Shop
      */
     public function getShop()
     {
         if (is_null($this->_oShop)) {
-            $this->_oShop = \OxidEsales\PaypalPlus\Core\Shop::getShop();
+            $this->_oShop = \OxidProfessionalServices\PayPalPlusCore\Shop::getShop();
         }
 
         return $this->_oShop;
@@ -183,7 +183,7 @@ class PaymentController extends PaymentController_parent
         //PayPalPlus and PayPal specific block
         if ( \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter( static::PARAM_PAYPAL_PLUS_PAYMENT_IS_ACTIVE ) ) {
             /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-            $oPayPalPaymentHandler = \OxidEsales\PaypalPlus\Core\Shop::getShop()->getFromRegistry( \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class );
+            $oPayPalPaymentHandler = \OxidProfessionalServices\PayPalPlusCore\Shop::getShop()->getFromRegistry( \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class );
             $oPayPalPaymentHandler->validateUserData();
         }
         return $this;
@@ -322,7 +322,7 @@ class PaymentController extends PaymentController_parent
     protected function _setPayment($sPaymentId)
     {
         $blRecalculateBasket = false;
-        $oShop = \OxidEsales\PaypalPlus\Core\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlusCore\Shop::getShop();
 
         $oBasket = $oShop->getBasket();
         $oPaymentCost = $oBasket->getPaymentCost();
@@ -374,7 +374,7 @@ class PaymentController extends PaymentController_parent
      */
     protected function _updatePayment()
     {
-        $oShop = \OxidEsales\PaypalPlus\Core\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlusCore\Shop::getShop();
 
         if ($oShop->getValidator()->isPaymentCreated() and $oShop->getRequestParameter('ajax')) {
             $oPayPalSession = $oShop->getPayPalPlusSession();
@@ -404,7 +404,7 @@ class PaymentController extends PaymentController_parent
      */
     protected function _ajaxResponseSuccess()
     {
-        $this->_ajaxRespondWithMessage(\OxidEsales\PaypalPlus\Core\Shop::getShop()->getPayPalPlusConfig()->getInternalTransactionToken());
+        $this->_ajaxRespondWithMessage(\OxidProfessionalServices\PayPalPlusCore\Shop::getShop()->getPayPalPlusConfig()->getInternalTransactionToken());
     }
 
     /**

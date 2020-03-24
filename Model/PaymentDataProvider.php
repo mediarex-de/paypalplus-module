@@ -25,7 +25,7 @@ namespace OxidProfessionalServices\PayPalPlus\Model;
  * Class \OxidProfessionalServices\PayPalPlus\Model\PaymentDataProvider.
  * A data provider for PlusPaymentData model.
  *
- * @see \OxidEsales\PaypalPlus\Model\PlusDataProvider
+ * @see \OxidProfessionalServices\PayPalPlusModel\PlusDataProvider
  */
 class PaymentDataProvider extends \OxidProfessionalServices\PayPalPlus\Model\PlusDataProvider
 {

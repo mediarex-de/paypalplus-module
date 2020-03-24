@@ -72,7 +72,7 @@ $aModule = [
         // Core
         'payppaypalplusnoorderexception'                                    => \OxidProfessionalServices\PayPalPlus\Core\Exception\NoOrderException::class,
         'payppaypalplusnopaymentfoundexception'                             => \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException::class,
-        'payppaypalpluspaymentdatasaveexception'                            => \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException::class,
+        'payppaypalpluspaymentdatasaveexception'                            => \OxidProfessionalServices\PayPalPlusCore\Exception\PaymentDataSaveException::class,
         'payppaypalplusrefundexception'                                     => \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException::class,
         'payppaypalplusconfig'                                              => \OxidProfessionalServices\PayPalPlus\Core\Config::class,
         'payppaypalplusdataaccess'                                          => \OxidProfessionalServices\PayPalPlus\Core\DataAccess::class,

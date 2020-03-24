@@ -113,7 +113,7 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      * @param $oWebhookEvent
      *
      * @throws \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException
-     * @throws \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException
+     * @throws \OxidProfessionalServices\PayPalPlusCore\Exception\PaymentDataSaveException
      */
     protected function _processEvent(\PayPal\Api\WebhookEvent $oWebhookEvent)
     {
@@ -323,12 +323,12 @@ class Webhook extends \OxidEsales\Eshop\Application\Controller\FrontendControlle
      *
      * @codeCoverageIgnore
      *
-     * @throws \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException
+     * @throws \OxidProfessionalServices\PayPalPlusCore\Exception\PaymentDataSaveException
      */
     protected function _throwPaymentDataSaveException()
     {
-        /** @var \OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException $oEx */
-        $oEx = $this->getShop()->getNew(\OxidEsales\PaypalPlus\Core\Exception\PaymentDataSaveException::class);
+        /** @var \OxidProfessionalServices\PayPalPlusCore\Exception\PaymentDataSaveException $oEx */
+        $oEx = $this->getShop()->getNew(\OxidProfessionalServices\PayPalPlusCore\Exception\PaymentDataSaveException::class);
         $sMessage = $this->getShop()->translate('payp_PAYPALPLUS_ERROR_PAYMENT_DATA_NOT_SAVED');
         $oEx->setMessage($sMessage);
         throw $oEx;
