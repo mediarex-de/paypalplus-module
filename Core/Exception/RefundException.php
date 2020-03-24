@@ -22,7 +22,7 @@
 namespace OxidEsales\PaypalPlus\Core\Exception;
 
 /**
- * Class \OxidProfessionalServices\PayPalPlusCore\Exception\RefundException
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Exception\RefundException
  *
  * Thrown if there is a error during the refund process
  */

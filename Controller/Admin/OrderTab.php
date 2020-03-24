@@ -43,7 +43,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * OXID eShop methods wrapper instance.
      *
-     * @var null|\OxidProfessionalServices\PayPalPlusCore\Shop
+     * @var null|\OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     protected $_oShop = null;
 
@@ -100,7 +100,7 @@ class OrderTab extends \OxidEsales\Eshop\Application\Controller\Admin\AdminDetai
     /**
      * Get OXID eShop wrapper.
      *
-     * @return \OxidProfessionalServices\PayPalPlusCore\Shop
+     * @return \OxidProfessionalServices\PayPalPlus\Core\Shop
      */
     public function getShop()
     {

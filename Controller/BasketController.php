@@ -41,7 +41,7 @@ class BasketController extends BasketController_parent
     {
         $mReturn = $this->_paypPayPalPlusOxBasket_render_parent();
 
-        $oShop = \OxidProfessionalServices\PayPalPlusCore\Shop::getShop();
+        $oShop = \OxidProfessionalServices\PayPalPlus\Core\Shop::getShop();
 
         if ($oShop->getValidator()->isPaymentPossible()) {
             $oBasket = $oShop->getBasket();
@@ -52,7 +52,7 @@ class BasketController extends BasketController_parent
             $oPayPalSession = $oShop->getPayPalPlusSession();
 
             /** @var \OxidProfessionalServices\PayPalPlus\Core\PaymentHandler $oPayPalPaymentHandler */
-            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlusCore\PaymentHandler::class);
+            $oPayPalPaymentHandler = $oShop->getFromRegistry(\OxidProfessionalServices\PayPalPlus\Core\PaymentHandler::class);
             $oPayPalPaymentHandler->init();
             $oPayPalPaymentHandler->create($oPayPalSession->getApiContext());
 

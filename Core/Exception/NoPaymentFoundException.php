@@ -22,7 +22,7 @@
 namespace OxidEsales\PaypalPlus\Core\Exception;
 
 /**
- * Class \OxidProfessionalServices\PayPalPlusCore\Exception\NoPaymentFoundException
+ * Class \OxidProfessionalServices\PayPalPlus\Core\Exception\NoPaymentFoundException
  *
  * Thrown if a payment is not found in the database
  */
