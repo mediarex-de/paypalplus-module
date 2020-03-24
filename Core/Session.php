@@ -21,9 +21,6 @@
 
 namespace OxidProfessionalServices\PayPalPlus\Core;
 
-// Load SDK
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
 /**
  * Class \OxidProfessionalServices\PayPalPlus\Core\Session
  * PayPal credentials token, API context and payment data session handler.

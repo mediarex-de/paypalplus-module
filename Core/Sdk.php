@@ -24,9 +24,6 @@ namespace OxidProfessionalServices\PayPalPlus\Core;
 // Set eShop timezone as default (to avoid overwriting of the timezone by SDK)
 ini_set('date.timezone', date_default_timezone_get());
 
-// Load SDK
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
 /**
  * Class Sdk
  * PayPal REST API SDK driver for OXID eShop.

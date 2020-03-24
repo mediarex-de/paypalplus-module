@@ -25,8 +25,6 @@ require_once dirname(__FILE__) . "/libs/vfsStream/vfsStream.php";
 // Include a dummy test class for objects data access testing.
 require_once dirname(__FILE__) . '/libs/invokeTestClass.php';
 
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
 if (!class_exists('InvoicepdfArticleSummary')) {
     class InvoicepdfArticleSummary {
 
