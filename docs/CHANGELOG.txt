@@ -1,9 +1,11 @@
 PayPal Plus changelog
 =====================
 
-unreleased
+v3.0.4
 ------
 - removed vendor dir
+- Bugfix: https://bugs.oxid-esales.com/view.php?id=7106
+- Bugfix: https://bugs.oxid-esales.com/view.php?id=7107
 
 v3.0.3
 ------
