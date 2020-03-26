@@ -236,9 +236,15 @@ class paypPayPalPlusOxOrder extends paypPayPalPlusOxOrder_parent
      * The call to getNextOrderNr() is done in \paypPayPalPlusPayment::_createPayment resp.
      * \paypPayPalPlusPayment::_updatePayment and as oxOrder::finalizeOrder()
      * may not necessary be called the may be unused order ids.
-     *
      * This is normally done in oxOrder::finalizeOrder, but we need the possibility to do this before, as we have to
      * send the order number to PayPal.
+     *
+     * !BUGFIX! From OXID4 to OXID6
+     * In OXID4 the oxOrder ->_setNumber() method could be used in this method.
+     * In the _setNumber()-Method an update-SQL was triggered, which at this point could not lead to success.
+     * The OXID4-DB-Handler nevertheless answered with "true" and we received the new order number.
+     * In OXID6, the DB-Handler answers correctly with "false" and therefore no longer returns the order number.
+     * Since the SQL was not important to us anyway, we directly access the _getCounterIdent () method.
      *
      * @return bool
      */
@@ -246,9 +252,10 @@ class paypPayPalPlusOxOrder extends paypPayPalPlusOxOrder_parent
     {
         $sOrderNr = null;
 
-        if ($this->_setNumber()) {
-            $sOrderNr = $this->oxorder__oxordernr->value;
-        }
+        $iCnt = oxNew('oxCounter')->getNext($this->_getCounterIdent());
+        $this->oxorder__oxordernr = new oxField($iCnt);
+
+        $sOrderNr = $this->oxorder__oxordernr->value;
 
         return $sOrderNr;
     }
