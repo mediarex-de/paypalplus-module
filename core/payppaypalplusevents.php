@@ -319,6 +319,18 @@ class paypPayPalPlusEvents extends paypPayPalPlusSuperCfg
             COLLATE='utf8_general_ci'
             ENGINE=InnoDB"
         );
+
+        if (!$this->_tableIndexExists('oxorder', 'oxpaymenttype')) {
+            $oDb->execute(
+                "ALTER TABLE `oxorder` ADD INDEX `OXPAYMENTTYPE` (`OXPAYMENTTYPE`)"
+            );
+        }
+
+        if (!$this->_tableIndexExists('payppaypalpluspui', 'oxpaymentid')) {
+            $oDb->execute(
+                "ALTER TABLE `payppaypalpluspui` ADD INDEX `OXPAYMENTID` (`OXPAYMENTID`)"
+            );
+        }
     }
 
     /**
@@ -649,4 +661,29 @@ class paypPayPalPlusEvents extends paypPayPalPlusSuperCfg
 
         return $sSslShopUrl;
     }
+
+    /**
+    * Check if index exists
+    *
+    * @param  $sTable - Name of table
+    * @param  $sIndex - Name of index
+    *
+    * @return boolean
+    */
+    protected function _tableIndexExists($sTable = '', $sIndex = '')
+    {
+        $bResult = false;
+        if ($sTable && $sIndex) {
+            $oDb = $this->getShop()->getDb();
+
+            $sSql = "show index from $sTable where key_name like " . $oDb->quote($sIndex);
+
+            $oResults = $oDb->select($sSql);
+            if ($oResults != false && $oResults->count() > 0) {
+                $bResult = true;
+            }
+        }
+        return $bResult;
+    }
+
 }
