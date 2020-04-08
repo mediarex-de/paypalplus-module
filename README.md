@@ -1,8 +1,6 @@
 # PayPal Plus payments module for OXID eShop
 
-OXID PS Console is a Symfony console application for OXID eShop.
-It is community and project driven with write and read access like in a public wiki (like Wikipedia).
-
+PayPal Plus module for OXID eShop.
 
 ## Installation
 Use Composer to add the console to your project
