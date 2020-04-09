@@ -217,7 +217,7 @@ class paypPayPalPlusPdfArticleSummaryPaymentInstructions
         $sDecimalSeparator = $this->_translateString('PAYP_PAYPALPLUS_PUI_CURRENCY_DECIMAL_SEPARATOR');
         $sThousandsSeparator = $this->_translateString('PAYP_PAYPALPLUS_PUI_CURRENCY_THOUSANDS_SEPARATOR');
 
-        $sTotal = number_format($fTotal, $sDecimals, $sDecimalSeparator, $sThousandsSeparator);;
+        $sTotal = number_format($fTotal, $sDecimals, $sDecimalSeparator, $sThousandsSeparator);
 
         return str_replace('.', $sDecimalSeparator, $sTotal);
     }

@@ -190,7 +190,7 @@ class paypPayPalPlusThankyou extends paypPayPalPlusThankyou_parent
         $sDecimalSeparator = $this->getShop()->getLang()->translateString('PAYP_PAYPALPLUS_PUI_CURRENCY_DECIMAL_SEPARATOR');
         $sThousandsSeparator = oxRegistry::getLang()->translateString('PAYP_PAYPALPLUS_PUI_CURRENCY_THOUSANDS_SEPARATOR');
 
-        $sTotal = number_format($fTotal, $sDecimals, $sDecimalSeparator, $sThousandsSeparator);;
+        $sTotal = number_format($fTotal, $sDecimals, $sDecimalSeparator, $sThousandsSeparator);
 
         return str_replace('.', $sDecimalSeparator, $sTotal);
     }

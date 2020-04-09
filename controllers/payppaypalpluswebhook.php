@@ -129,7 +129,7 @@ class paypPayPalPlusWebhook extends oxUBase
         $oPaymentData->loadByPaymentId($sPaymentId);
         if (!$oPaymentData->isLoaded()) {
             $this->_throwNoPaymentFoundException();
-        };
+        }
 
         /**
          * Update the payment status in the shop database

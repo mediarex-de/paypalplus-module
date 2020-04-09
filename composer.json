@@ -21,7 +21,10 @@
     "lib-curl": ">=7.26.0",
     "lib-openssl": ">=1.0.1",
     "ext-curl": "*",
+    "ext-json": "*",
+    "ext-iconv": "*",
     "ext-openssl": "*",
+    "oxid-esales/oxideshop-ce": "^v6",
     "paypal/rest-api-sdk-php": "^v1.13.0"
   },
   "config":{
