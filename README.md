@@ -3,7 +3,7 @@
 PayPal Plus module for OXID eShop.
 
 ## Installation
-Use Composer to add the console to your project
+Use Composer to add the module to your project
 ```bash
 composer require oxid-professional-services/paypalplus-module
 ```
@@ -13,11 +13,13 @@ composer require oxid-professional-services/paypalplus-module
 * Optionally configure eShop shipping methods and shipping cost rules
 
 ## Versions
-* Module v3.0.x
+* Module v3.0.*
 * PayPal-PHP-SDK v1.13.0
 
 ## Supported OXID eShop version
-* 6.0.x
+* 6.0.*
+* 6.1.*
+* 6.2.*
 
 ## For developers
 * PayPal plus payment acts as payment container. See `views/blocks/oxpspaypalplus_payment_select_payment.tpl`. At the moment we exclude even "empty/free" payment.
