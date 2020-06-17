@@ -35,7 +35,7 @@ $aModule = array(
         'en' => 'PayPal Plus payments module for OXID eShop',
     ),
     'thumbnail'   => 'out/pictures/payppaypalplus.png',
-    'version'     => '3.0.5',
+    'version'     => '3.0.7',
     'author'      => 'PayPal (Europe) S.à r.l. et Cie, S.C.A.',
     'url'         => 'https://www.paypal.com',
     'email'       => 'service@paypal.com',
