@@ -565,7 +565,7 @@ class paypPayPalPlusEvents extends paypPayPalPlusSuperCfg
         $sSecret = $oPayPalConfig->getSecret();
 
         if (empty($sClientId) || empty($sSecret)) {
-            $sMessage = $this->getShop()->translate('payp_PAYPALPLUS_ERROR_NO_USER_CREDENTIALS');
+            $sMessage = $this->getShop()->translate('PAYP_PAYPALPLUS_ERROR_NO_USER_CREDENTIALS');
             /** @var oxException $oException */
             $oException = oxNew('oxException');
             $oException->setMessage($sMessage);

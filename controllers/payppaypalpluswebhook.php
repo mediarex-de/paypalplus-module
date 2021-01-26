@@ -287,7 +287,7 @@ class paypPayPalPlusWebhook extends oxUBase
     {
         /** @var paypPayPalPlusNoPaymentFoundException $oEx */
         $oEx = $this->getShop()->getNew('paypPayPalPlusNoPaymentFoundException');
-        $sMessage = $this->getShop()->translate('payp_PAYPALPLUS_ERROR_NO_PAYMENT_FOUND_FOR_EVENT');
+        $sMessage = $this->getShop()->translate('PAYP_PAYPALPLUS_ERROR_NO_PAYMENT_FOUND_FOR_EVENT');
         $oEx->setMessage($sMessage);
         throw $oEx;
     }
@@ -329,7 +329,7 @@ class paypPayPalPlusWebhook extends oxUBase
     {
         /** @var paypPayPalPlusPaymentDataSaveException $oEx */
         $oEx = $this->getShop()->getNew('paypPayPalPlusPaymentDataSaveException');
-        $sMessage = $this->getShop()->translate('payp_PAYPALPLUS_ERROR_PAYMENT_DATA_NOT_SAVED');
+        $sMessage = $this->getShop()->translate('PAYP_PAYPALPLUS_ERROR_PAYMENT_DATA_NOT_SAVED');
         $oEx->setMessage($sMessage);
         throw $oEx;
     }
