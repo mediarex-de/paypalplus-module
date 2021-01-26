@@ -219,8 +219,6 @@ class paypPayPalPlusRefundData extends oxBase
             $oDb->quote($sSaleId)
         );
 
-        $oDb->execute($sDeleteQuery);
-
-        return (bool) $oDb->affected_Rows();
+        return (bool) $oDb->execute($sDeleteQuery);
     }
 }
