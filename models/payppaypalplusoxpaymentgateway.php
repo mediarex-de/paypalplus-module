@@ -37,16 +37,16 @@ class paypPayPalPlusOxPaymentGateway extends paypPayPalPlusOxPaymentGateway_pare
 
 
     /**
-     * Hardcoded Last Error Message.
+     * Error Message.
      */
-    protected $_lastError = 'PAYP_PAYPALPLUS_ERROR_PAYPAL_ERROR_OR_SESSION_EXPIRED';
+    protected $_lastPaypalPlusError = 'PAYP_PAYPALPLUS_ERROR_PAYPAL_ERROR_OR_SESSION_EXPIRED';
 
     /**
-     * Hardcoded Last error number.
+     * error number.
      *
      * @var int
      */
-    protected $_LastErrorNo = -1;
+    protected $_LastPaypalPlusErrorNo = -1;
 
     /**
      * Get OXID eShop wrapper.
@@ -84,6 +84,9 @@ class paypPayPalPlusOxPaymentGateway extends paypPayPalPlusOxPaymentGateway_pare
 
             // Check payment and call payment execution
             if (!$oShop->getValidator()->isPaymentCreated($oApprovedPayment)) {
+                $this->_iLastErrorNo = $this->_LastPaypalPlusErrorNo;
+                $this->_sLastError = $this->_lastPaypalPlusError;
+
                 return false;
             }
 
@@ -92,6 +95,9 @@ class paypPayPalPlusOxPaymentGateway extends paypPayPalPlusOxPaymentGateway_pare
                 $oOrder->oxorder__oxordernr->value = new oxField($sInvoiceNumber);
             }
             if (!$this->_executePayment($oOrder)) {
+                $this->_iLastErrorNo = $this->_LastPaypalPlusErrorNo;
+                $this->_sLastError = $this->_lastPaypalPlusError;
+
                 return false;
             }
 
@@ -100,54 +106,6 @@ class paypPayPalPlusOxPaymentGateway extends paypPayPalPlusOxPaymentGateway_pare
         }
 
         return $this->_paypPayPalPlusOxPaymentGateway_executePayment_parent($dAmount, $oOrder);
-    }
-
-    /**
-     * If this function exists, it will be called by oxOrder::_executePayment on error
-     *
-     * @codeCoverageIgnore
-     *
-     * @return mixed
-     */
-    public function getLastError()
-    {
-        return $this->_lastError;
-    }
-
-    /**
-     * Property setter
-     *
-     * @codeCoverageIgnore
-     *
-     * @param mixed $lastError
-     */
-    protected function setLastError($lastError)
-    {
-        $this->_lastError = $lastError;
-    }
-
-    /**
-     * If this function exists, it will be called by oxOrder::_executePayment on error
-     *
-     * @codeCoverageIgnore
-     *
-     * @return null
-     */
-    public function getLastErrorNo()
-    {
-        return $this->_LastErrorNo;
-    }
-
-    /**
-     * Property Setter
-     *
-     * @codeCoverageIgnore
-     *
-     * @param null $LastErrorNo
-     */
-    protected function setLastErrorNo($LastErrorNo)
-    {
-        $this->_LastErrorNo = $LastErrorNo;
     }
 
     /**
