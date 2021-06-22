@@ -1,5 +1,5 @@
 [{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign}]
-<link rel="stylesheet" href="[{$oViewConf->getPayPalPlusSrcUrl('css/payppaypalplusbackend.css')}]"/>
+<link rel="stylesheet" href="[{$oViewConf->getModuleUrl('payppaypalplus', 'out/src/css/payppaypalplusbackend.css')}]"/>
 <form name="transfer" id="transfer" action="[{$oViewConf->getSelfLink()}]" method="post">
     [{$oViewConf->getHiddenSid()}]
     <input type="hidden" name="oxid" value="[{$oxid}]"/>

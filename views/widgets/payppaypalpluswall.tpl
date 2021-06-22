@@ -39,7 +39,7 @@
 [{assign var="sError_domPaymentIdPrefix_3"      value="PAYP_PAYPALPLUS_ERR_PAYMENT_PREFIX_3"|oxmultilangassign}]
 [{assign var="sSettingsTplLocation"      value="PAYP_PAYPALPLUS_SETTINGS_TPL_LOCATION"|oxmultilangassign}]
 [{oxscript include=$oView->getPayPalPlusLibraryUrl() priority=1}]
-[{oxscript include=$oViewConf->getPayPalPlusSrcUrl('js/payppaypalpluswall.js')|cat:'?108' priority=15}]
+[{oxscript include=$oViewConf->getModuleUrl('payppaypalplus', 'out/src/js/payppaypalpluswall.js') priority=15}]
 [{oxscript add="
 jQuery(document).ready(function () {
     jQuery('#`$sWallPlaceholderId`').wall({
