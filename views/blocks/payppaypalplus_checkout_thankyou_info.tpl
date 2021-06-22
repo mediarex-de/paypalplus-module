@@ -1,8 +1,8 @@
 [{$smarty.block.parent}]
 [{assign var="oPaymentInstructions" value=$oView->getPaymentInstructions()}]
 
-[{oxstyle include=$oViewConf->getPayPalPlusSrcUrl('css/payppaypalpluswall.css')|cat:'?106'}]
-[{oxscript include=$oViewConf->getPayPalPlusSrcUrl('js/payppaypalplusthankyou.js')|cat:'?106'}]
+[{oxstyle include=$oViewConf->getModuleUrl('payppaypalplus', 'out/src/css/payppaypalpluswall.css')}]
+[{oxscript include=$oViewConf->getModuleUrl('payppaypalplus', 'out/src/js/payppaypalplusthankyou.js')}]
 
 [{if $oPaymentInstructions }]
 
@@ -22,7 +22,7 @@
                     [{$sTotalPrice}] [{$sCurrency}]
                     </span>
                 <div class="calendar">
-                    <img src="[{$oViewConf->getPayPalPlusSrcUrl('img/PP_PLUS_PUI_ArrowGraphic.png')|cat:'?106'}]" alt="calendar">
+                    <img src="[{$oViewConf->getModuleUrl('payppaypalplus', 'out/src/img/PP_PLUS_PUI_ArrowGraphic.png')}]" alt="calendar">
                 </div>
                 <span class="paypal-logo">
                     <img src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png" border="0" alt="PayPal Logo"/>

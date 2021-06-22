@@ -94,20 +94,4 @@ class paypPayPalPlusOxViewConfig extends paypPayPalPlusOxViewConfig_parent
     {
         return $this->getPayPalPlusShop()->getValidator()->isPaymentCreated();
     }
-
-    /**
-     * Get the module resource URL.
-     *
-     * @param string $sResourceRelativePath Media resource path inside the module `src` folder.
-     *
-     * @return string
-     */
-    public function getPayPalPlusSrcUrl($sResourceRelativePath = '')
-    {
-        /** @var paypPayPalPlusOxViewConfig|oxViewConfig $this */
-
-        $oModule = $this->getPayPalPlusShop()->getPayPalPlusModule();
-
-        return $this->getModuleUrl($oModule->getModulePath(), 'out/src/' . $sResourceRelativePath);
-    }
 }
