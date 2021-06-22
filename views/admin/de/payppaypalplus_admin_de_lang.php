@@ -41,7 +41,7 @@ $aLang = array(
                                                           'Zu Beachten ist, dass die OXID Methoden "oxiddebitnote" und "oxidcreditcard" nicht in der Payment wall angezeigt werden k&ouml;nnen.<br/>' .
                                                           'Es k&ouml;nnen maximal 5 Zahlungsmethoden hinzugef&uuml;gt werden.',
 
-    'SHOP_MODULE_GROUP_paypPayPalPlusTemplateIntegration'    => 'PayPal Plus Temmplateeinstellungen',
+    'SHOP_MODULE_GROUP_paypPayPalPlusTemplateIntegration'    => 'PayPal Plus Templateeinstellungen',
     'SHOP_MODULE_paypPayPalPlusNextButtonId'           => '* [paypPayPalPlusNextButtonId] Die ID des "Weiter"-Buttons auf der Bezahlseite.',
     'SHOP_MODULE_paypPayPalPlusNextLink'               => '[paypPayPalPlusNextLink] CSS Selektor f&uuml;r die obere Navigation "Weiter" auf der Seite "Bezahlen" im Checkout.',
     'SHOP_MODULE_paypPayPalPlusNextLinkParent'         => '[paypPayPalPlusNextLinkParent] CSS Selektor f&uuml;r das Elternelement der oberen Navigation "Weiter" auf der Seite "Bezahlen" im Checkout.',
