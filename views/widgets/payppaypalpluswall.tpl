@@ -87,7 +87,7 @@ jQuery(document).ready(function () {
         }
     });
 });"}]
-[{oxstyle include=$oViewConf->getModuleUrl('payppaypalplus', 'out/src/js/payppaypalpluswall.css')}]
+[{oxstyle include=$oViewConf->getModuleUrl('payppaypalplus', 'out/src/css/payppaypalpluswall.css')}]
 <div id="[{$sLoadingIndicatorId}]"></div>
 <div id="[{$sWallPlaceholderId}]">
     <noscript>
