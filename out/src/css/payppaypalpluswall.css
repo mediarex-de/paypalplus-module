@@ -1,7 +1,7 @@
 /* PAYP PayPal Plus wall widget styles */
 
 #paypPayPalPlusLoading {
-    background: #FFFFFF url("../../../../../../out/azure/img/loading.gif") no-repeat 50% 50%;
+    background: #FFFFFF url("../img/loading.gif") no-repeat 50% 50%;
     height: 100%;
     left: 0;
     opacity: 0.5;
