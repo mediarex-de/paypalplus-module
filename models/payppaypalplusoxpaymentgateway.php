@@ -92,7 +92,7 @@ class paypPayPalPlusOxPaymentGateway extends paypPayPalPlusOxPaymentGateway_pare
 
             $oPayPalSession = $oShop->getPayPalPlusSession();
             if ($sInvoiceNumber = $oPayPalSession->getInvoiceNumber()) {
-                $oOrder->oxorder__oxordernr->value = new oxField($sInvoiceNumber);
+                $oOrder->oxorder__oxordernr = new oxField($sInvoiceNumber);
             }
             if (!$this->_executePayment($oOrder)) {
                 $this->_iLastErrorNo = $this->_LastPaypalPlusErrorNo;
