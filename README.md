@@ -20,6 +20,7 @@ composer require oxid-professional-services/paypalplus-module
 * 6.0.*
 * 6.1.*
 * 6.2.*
+* 6.3.*
 
 ## For developers
 * PayPal plus payment acts as payment container. See `views/blocks/oxpspaypalplus_payment_select_payment.tpl`. At the moment we exclude even "empty/free" payment.
